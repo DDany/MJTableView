@@ -55,6 +55,9 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 	self.accessoryType = UITableViewCellAccessoryNone;
     
+    // clear
+    [self.segment removeAllSegments];
+    
     // set up segment.
     [row.titles enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [self.segment insertSegmentWithTitle:obj atIndex:idx animated:NO];

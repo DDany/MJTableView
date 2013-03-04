@@ -45,14 +45,12 @@
 #pragma mark - Create cell
 - (UITableViewCell *)cell {
     MJTextViewTableViewCell *cell = [[MJTextViewTableViewCell alloc] initWithStyle:self.cellStyle reuseIdentifier:self.reuseIdentifier];
-    
-    [cell prepareForRow:self];
-    
+        
     return cell;
 }
 
-#pragma mark - Getter
-- (CGFloat)rowHeight {
+#pragma mark - Row height
+- (CGFloat)rowHeightForTableView:(UITableView *)tableView {
     if (!self.editable && self.dynamicAdjustRowHeightWhenShow) {
         
         CGSize textSize = CGSizeZero;
@@ -61,25 +59,26 @@
         if (self.text && self.text.length > 0) {
             // text and detailText.
             textSize = [self.text sizeWithFont:self.textFont
-                                    constrainedToSize:CGSizeMake(100, 44)
-                                        lineBreakMode:NSLineBreakByWordWrapping];
+                             constrainedToSize:CGSizeMake(100, 44)
+                                 lineBreakMode:NSLineBreakByWordWrapping];
         }else {
             // only detailText.
             // do nothing.
         }
         
-        CGFloat contentViewWidth = 280;
-        CGFloat contentViewWidhtForDetail = contentViewWidth - textSize.width - 10;
+        CGFloat offset = tableView.bounds.size.width - 320;
+        CGFloat contentViewWidth = self.accessoryType == UITableViewCellAccessoryNone ? 280 : (240);
+        CGFloat contentViewWidhtForDetail = contentViewWidth - offset - textSize.width - 10;
         
         CGSize detailSize = [self.stringValue sizeWithFont:self.detailTextFont
                                          constrainedToSize:CGSizeMake(contentViewWidhtForDetail, self.maxRowHeight)
                                              lineBreakMode:NSLineBreakByWordWrapping];
         
-        [self setRowHeight:detailSize.height + 0];
+        [self setRowHeight:detailSize.height + ADJUST_TOP_INSET*2];
         
     }
     
-    return [super rowHeight];
+    return self.rowHeight;
 }
 
 @end

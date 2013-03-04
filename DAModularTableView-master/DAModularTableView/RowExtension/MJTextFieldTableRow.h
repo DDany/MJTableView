@@ -27,4 +27,6 @@
 
 @property(nonatomic, copy) void (^onValueChanged)(NSString *newText);
 
+@property (nonatomic, assign) NSUInteger limitLength;   // default is 0
+
 @end

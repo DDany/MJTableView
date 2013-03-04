@@ -66,6 +66,15 @@
     };
     [self.tableView insertRow:dynamicModificationRow];
     
+    MJTableRow *dynamicModificationTestRow = [MJTableRow row];
+    dynamicModificationTestRow.text = @"Performance Test";
+    dynamicModificationTestRow.didSelectBlock = ^(NSIndexPath *indexPath){
+        DynamicModificationViewController *dmvc = [[DynamicModificationViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        dmvc.performanceTestMode = YES;
+        [self.navigationController pushViewController:dmvc animated:YES];
+    };
+    [self.tableView insertRow:dynamicModificationTestRow];
+    
     MJTableRow *waterfallRow = [MJTableRow row];
     waterfallRow.text = @"Waterfall Example";
     waterfallRow.didSelectBlock = ^(NSIndexPath *indexPath){

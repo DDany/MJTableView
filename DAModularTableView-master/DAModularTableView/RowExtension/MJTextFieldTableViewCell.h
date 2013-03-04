@@ -10,6 +10,4 @@
 
 @interface MJTextFieldTableViewCell : MJTableViewCell
 
-@property (nonatomic, strong) NSString *stringValue;
-
 @end

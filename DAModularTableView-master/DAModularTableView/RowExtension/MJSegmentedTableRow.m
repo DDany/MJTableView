@@ -27,9 +27,7 @@
 #pragma mark - Create cell
 - (UITableViewCell *)cell {
     MJSegmentedTableViewCell *cell = [[MJSegmentedTableViewCell alloc] initWithStyle:self.cellStyle reuseIdentifier:self.reuseIdentifier];
-    
-    [cell prepareForRow:self];
-    
+        
     return cell;
 }
 

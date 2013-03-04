@@ -32,6 +32,8 @@
         self.returnKeyType = UIReturnKeyDefault;
         self.enablesReturnKeyAutomatically = NO;
         self.secureTextEntry = NO;
+        
+        self.limitLength = 0;
     }
     return self;
 }
@@ -39,9 +41,7 @@
 #pragma mark - Create cell
 - (UITableViewCell *)cell {
     MJTextFieldTableViewCell *cell = [[MJTextFieldTableViewCell alloc] initWithStyle:self.cellStyle reuseIdentifier:self.reuseIdentifier];
-    
-    [cell prepareForRow:self];
-    
+        
     return cell;
 }
 

@@ -17,6 +17,8 @@
 @implementation MJTextFieldTableViewCell
 {
     UIToolbar           *inputAccessoryView;
+    UILabel             *messageLabel;
+    NSTimer             *messageTimer;
 }
 
 - (void)initialize {
@@ -50,6 +52,14 @@
     return self;
 }
 
+- (void)dealloc {
+    if (messageTimer) {
+        [messageTimer invalidate];
+        messageTimer = nil;
+    }
+}
+
+#pragma mark - Select
 - (void)setSelected:(BOOL)selected {
 	[super setSelected:selected];
 	if (selected) {
@@ -64,7 +74,7 @@
 	}
 }
 
-#pragma mark
+#pragma mark - Custom cell
 - (void)prepareForRow:(MJTextFieldTableRow *)row
 {
     [super prepareForRow:row];
@@ -88,16 +98,24 @@
     self.textField.secureTextEntry = row.secureTextEntry;
 }
 
-#pragma mark
-- (void)setStringValue:(NSString *)value {
-	self.textField.text = value;
+#pragma mark - Getter - Setter
+
+
+#pragma mark - Message Timer
+- (void)startMessageTimer {
+    messageTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(clearMessage) userInfo:nil repeats:YES];
 }
 
-- (NSString *)stringValue {
-	return self.textField.text;
+- (void)stopMessageTimer {
+    [messageTimer invalidate];
+    messageTimer = nil;
 }
 
-#pragma mark
+- (void)clearMessage {
+    messageLabel.text = @"";
+}
+
+#pragma mark - Input Accessory View
 - (UIView *)inputAccessoryView {
 	if (!inputAccessoryView) {
         inputAccessoryView = [[UIToolbar alloc] init];
@@ -112,7 +130,16 @@
         UIBarButtonItem *doneBtn =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
         UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         
-        NSArray *array = [NSArray arrayWithObjects:flexibleSpaceLeft, doneBtn, nil];
+        messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 180, 44)];
+        messageLabel.backgroundColor = [UIColor clearColor];
+        messageLabel.textAlignment = NSTextAlignmentLeft;
+        messageLabel.textColor = [UIColor whiteColor];
+        messageLabel.shadowColor = [UIColor darkGrayColor];
+        messageLabel.font = [UIFont boldSystemFontOfSize:16.0f];
+        
+        UIBarButtonItem *label = [[UIBarButtonItem alloc] initWithCustomView:messageLabel];
+        
+        NSArray *array = [NSArray arrayWithObjects:label, flexibleSpaceLeft, doneBtn, nil];
         [inputAccessoryView setItems:array];
     }
     return inputAccessoryView;
@@ -122,7 +149,7 @@
 	[self.textField resignFirstResponder];
 }
 
-#pragma mark
+#pragma mark - Text field delegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[self.textField resignFirstResponder];
 	return YES;
@@ -134,13 +161,40 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (((MJTextFieldTableRow *)self.row).onValueChanged) {
-        ((MJTextFieldTableRow *)self.row).onValueChanged(textField.text);
+    BOOL result = YES;
+    
+    if (((MJTextFieldTableRow *)self.row).limitLength > 0) {
+        NSUInteger oldLength = [textField.text length];
+        NSUInteger replacementLength = [string length];
+        NSUInteger rangeLength = range.length;
+        
+        NSUInteger newLength = oldLength - rangeLength + replacementLength;
+        
+        BOOL returnKey = [string rangeOfString: @"\n"].location != NSNotFound;
+        
+        result = newLength <= ((MJTextFieldTableRow *)self.row).limitLength || returnKey;
     }
-    return YES;
+    
+    if (result) {
+        ((MJTextFieldTableRow *)self.row).stringValue = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        if (((MJTextFieldTableRow *)self.row).onValueChanged) {
+            ((MJTextFieldTableRow *)self.row).onValueChanged(((MJTextFieldTableRow *)self.row).stringValue);
+        }
+    }
+    
+    if (messageLabel) {
+        // show warning message.
+        messageLabel.text = result ? @"" : [NSString stringWithFormat:@"最大长度不能超过%d位!", ((MJTextFieldTableRow *)self.row).limitLength];
+        if (messageLabel.text.length > 0) {
+            [self stopMessageTimer];
+            [self startMessageTimer];
+        }
+    }
+    
+    return result;
 }
 
-#pragma mark
+#pragma mark - Layout subView
 - (void)layoutSubviews {
 	[super layoutSubviews];
 	CGRect editFrame = CGRectInset(self.contentView.frame, 10, 0);

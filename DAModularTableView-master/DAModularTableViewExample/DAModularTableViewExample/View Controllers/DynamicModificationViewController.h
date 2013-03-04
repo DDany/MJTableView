@@ -10,4 +10,6 @@
 
 @interface DynamicModificationViewController : MJTableViewController
 
+@property (nonatomic, assign) BOOL performanceTestMode;
+
 @end

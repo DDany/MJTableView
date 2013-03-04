@@ -19,5 +19,6 @@
 #import "MJTextViewTableRow.h"
 #import "MJSegmentedTableRow.h"
 #import "MJSplitTableRow.h"
+#import "MJIntegerInputTableRow.h"
 
 #endif

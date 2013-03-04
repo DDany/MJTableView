@@ -25,6 +25,8 @@
         _dateValue = [NSDate date];
         self.cellStyle = UITableViewCellStyleValue1;
         self.mode = UIDatePickerModeDateAndTime;
+        
+        self.shouldDeselectAfterSelect = NO;
     }
     return self;
 }
@@ -32,9 +34,7 @@
 #pragma mark - Create cell
 - (UITableViewCell *)cell {
     MJDateTableViewCell *cell = [[MJDateTableViewCell alloc] initWithStyle:self.cellStyle reuseIdentifier:self.reuseIdentifier];
-    
-    [cell prepareForRow:self];
-    
+        
     return cell;
 }
 

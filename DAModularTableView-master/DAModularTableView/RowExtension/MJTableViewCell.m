@@ -45,6 +45,10 @@
     if (self.row.detailTextColor) {
         self.detailTextLabel.textColor = self.row.detailTextColor;
     }
+    if (self.row.isDetailTextMultiLine) {
+        self.detailTextLabel.numberOfLines = 0;
+        self.detailTextLabel.textAlignment = NSTextAlignmentLeft;
+    }
     self.imageView.image = self.row.image;
     self.accessoryView = self.row.accessoryView;
     

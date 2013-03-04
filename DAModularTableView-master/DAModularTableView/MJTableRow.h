@@ -15,16 +15,18 @@
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) NSString *detailText;
 @property (nonatomic, strong) UIFont *detailTextFont;
+@property (nonatomic, assign) BOOL isDetailTextMultiLine;       // default is NO;
 @property (nonatomic, strong) UIColor *detailTextColor;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIView *accessoryView;
 
-@property (nonatomic) CGFloat rowHeight;
+@property (nonatomic, assign) CGFloat rowHeight;
 
-@property (nonatomic) UITableViewCellSelectionStyle selectionStyle;
-@property (nonatomic) UITableViewCellAccessoryType accessoryType;
-@property (nonatomic) UITableViewCellStyle cellStyle;
-@property (nonatomic) UITableViewRowAnimation rowAnimation;
+@property (nonatomic, assign) UITableViewCellSelectionStyle selectionStyle;
+@property (nonatomic, assign) BOOL shouldDeselectAfterSelect;   // default is YES;
+@property (nonatomic, assign) UITableViewCellAccessoryType accessoryType;
+@property (nonatomic, assign) UITableViewCellStyle cellStyle;
+@property (nonatomic, assign) UITableViewRowAnimation rowAnimation;
 
 #pragma mark - Custom part
 @property (nonatomic, strong) NSString *reuseIdentifier;
@@ -38,4 +40,7 @@
 
 #pragma mark - Create cell
 - (UITableViewCell *)cell;
+
+#pragma mark - Row height
+- (CGFloat)rowHeightForTableView:(UITableView *)tableView;
 @end

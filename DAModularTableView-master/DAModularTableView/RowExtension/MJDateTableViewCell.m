@@ -62,6 +62,7 @@
     [super prepareForRow:row];
     
     [self.dateFormatter setDateFormat:row.showDateFormatter];
+    self.dateValue = row.dateValue;
     
     self.detailTextLabel.text = [self.dateFormatter stringFromDate:self.dateValue];
 }
@@ -128,14 +129,14 @@
 }
 
 - (void)dateChanged:(id)sender {
-	self.dateValue = ((UIDatePicker *)sender).date;
+	((MJDateTableRow *)self.row).dateValue = ((UIDatePicker *)sender).date;
     
-	self.detailTextLabel.text = [self.dateFormatter stringFromDate:self.dateValue];
+	self.detailTextLabel.text = [self.dateFormatter stringFromDate:((MJDateTableRow *)self.row).dateValue];
 
-    ((MJDateTableRow *)self.row).dateValue = self.dateValue;
+    self.dateValue = ((MJDateTableRow *)self.row).dateValue;
 
     if (((MJDateTableRow *)self.row).onValueChanged) {
-        ((MJDateTableRow *)self.row).onValueChanged(self.dateValue);
+        ((MJDateTableRow *)self.row).onValueChanged(((MJDateTableRow *)self.row).dateValue);
     }
 }
 

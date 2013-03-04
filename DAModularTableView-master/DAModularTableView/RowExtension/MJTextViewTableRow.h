@@ -8,6 +8,8 @@
 
 #import "MJTableRow.h"
 
+#define ADJUST_TOP_INSET    5
+
 @interface MJTextViewTableRow : MJTableRow
 
 + (MJTextViewTableRow *)row;

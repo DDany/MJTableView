@@ -28,7 +28,7 @@
 	self.textView.autocapitalizationType = UITextAutocapitalizationTypeWords;
 	self.textView.font = [UIFont systemFontOfSize:16.0f];
 	self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    self.textView.contentInset = UIEdgeInsetsMake(-10, 0, -10, 0);
+    self.textView.contentInset = UIEdgeInsetsMake(-ADJUST_TOP_INSET*2, 0, -ADJUST_TOP_INSET*2, 0);
 	[self addSubview:self.textView];
 	
 	self.textView.delegate = self;
@@ -51,6 +51,7 @@
     return self;
 }
 
+#pragma mark - Selcet
 - (void)setSelected:(BOOL)selected {
 	[super setSelected:selected];
 	if (selected) {
@@ -138,17 +139,23 @@
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
+    
     if (((MJTextViewTableRow *)self.row).dynamicAdjustRowHeightWhenEdit) {
         UITableView *tableView = [self tableView];
         
+        CGFloat oldRowHeight = self.row.rowHeight;
         self.row.rowHeight = [self suitableHeight];
         
-        [tableView beginUpdates];
-        [tableView endUpdates];
+        if (oldRowHeight != self.row.rowHeight) {
+            [tableView beginUpdates];
+            [tableView endUpdates];
+        }
     }
     
+    ((MJTextViewTableRow *)self.row).stringValue = textView.text;
+    
     if (((MJTextViewTableRow *)self.row).onValueChanged) {
-        ((MJTextViewTableRow *)self.row).onValueChanged(textView.text);
+        ((MJTextViewTableRow *)self.row).onValueChanged(((MJTextViewTableRow *)self.row).stringValue);
     }
 }
 
@@ -161,6 +168,8 @@
     CGFloat height = [self.textView.text sizeWithFont:self.textView.font
                                     constrainedToSize:CGSizeMake(self.textView.bounds.size.width, 1000)
                                         lineBreakMode:NSLineBreakByWordWrapping].height;
+    height += ADJUST_TOP_INSET*2;
+    
     if (height < minRowHeight) {
         return minRowHeight;
     }else if (height > maxRowHeight) {
@@ -173,13 +182,13 @@
 #pragma mark
 - (void)layoutSubviews {
 	[super layoutSubviews];
-	CGRect editFrame = CGRectInset(self.contentView.frame, 10, 2);
+	CGRect editFrame = CGRectInset(self.contentView.frame, 10, ADJUST_TOP_INSET);
 	
 	if (self.textLabel.text && [self.textLabel.text length] != 0) {
 		CGSize textSize = [self.textLabel sizeThatFits:CGSizeZero];
 		editFrame.origin.x += textSize.width + 10;
 		editFrame.size.width -= textSize.width + 10;
-        editFrame.size.height = self.bounds.size.height - 4;
+        editFrame.size.height = self.bounds.size.height - ADJUST_TOP_INSET*2;
 	} else {
 		CGSize textSize = [self.textView sizeThatFits:CGSizeZero];
         editFrame.origin.y = (self.contentView.frame.size.height - textSize.height)/2;

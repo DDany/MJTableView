@@ -7,6 +7,7 @@
 //
 
 #import "MJTableView.h"
+#import "MJTableViewCell.h"
 
 @interface MJTableView () <UITableViewDelegate, UITableViewDataSource>
 
@@ -300,10 +301,12 @@
     MJTableRow *tableRow = [self rowAtIndexPath:indexPath];
     
     NSString *cellIdentifier = tableRow.reuseIdentifier;
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    MJTableViewCell *cell = (MJTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [tableRow cell];
+        cell = (MJTableViewCell *)[tableRow cell];
     }
+    
+    [cell prepareForRow:tableRow];
     
     if (tableRow.cellForRowBlock) {
         tableRow.cellForRowBlock(cell, indexPath);
@@ -357,6 +360,10 @@
         tableRow.didSelectBlock(indexPath);
     }
     
+    if (tableRow.shouldDeselectAfterSelect) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    
     #pragma clang diagnostic push
     #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     if (tableRow.didSelectAction) {
@@ -368,7 +375,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MJTableRow *tableRow = [self rowAtIndexPath:indexPath];
-    return (tableRow.rowHeight ? tableRow.rowHeight : tableView.rowHeight);
+    CGFloat height = [tableRow rowHeightForTableView:tableView];
+    if (height) {
+        return height;
+    }else {
+        return tableView.rowHeight;
+    }
 }
 
 @end

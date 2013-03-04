@@ -30,9 +30,7 @@
 #pragma mark - Create cell
 - (UITableViewCell *)cell {
     MJSplitTableViewCell *cell = [[MJSplitTableViewCell alloc] initWithStyle:self.cellStyle reuseIdentifier:self.reuseIdentifier];
-    
-    [cell prepareForRow:self];
-    
+        
     return cell;
 }
 
