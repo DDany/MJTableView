@@ -71,21 +71,21 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 	self.accessoryType = UITableViewCellAccessoryNone;
     
-    self.textField.text = ((MJTextFieldTableRow *)self.row).stringValue;
-    self.textField.textColor = ((MJTextFieldTableRow *)self.row).detailTextColor;
-    self.textField.placeholder = ((MJTextFieldTableRow *)self.row).placeHolder;
-    self.textField.autocorrectionType = ((MJTextFieldTableRow *)self.row).autocorrectionType;
-	self.textField.autocapitalizationType = ((MJTextFieldTableRow *)self.row).autocapitalizationType;
+    self.textField.text = row.stringValue;
+    self.textField.textColor = row.detailTextColor;
+    self.textField.placeholder = row.placeHolder;
+    self.textField.autocorrectionType = row.autocorrectionType;
+	self.textField.autocapitalizationType = row.autocapitalizationType;
 	self.textField.textAlignment = NSTextAlignmentRight;
-	self.textField.font = ((MJTextFieldTableRow *)self.row).detailTextFont;
+	self.textField.font = row.detailTextFont;
 	self.textField.clearButtonMode = UITextFieldViewModeNever;
 	self.textField.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    self.textField.spellCheckingType = ((MJTextFieldTableRow *)self.row).spellCheckingType;
-    self.textField.keyboardType = ((MJTextFieldTableRow *)self.row).keyboardType;
-    self.textField.keyboardAppearance = ((MJTextFieldTableRow *)self.row).keyboardAppearance;
-    self.textField.returnKeyType = ((MJTextFieldTableRow *)self.row).returnKeyType;
-    self.textField.enablesReturnKeyAutomatically = ((MJTextFieldTableRow *)self.row).enablesReturnKeyAutomatically;
-    self.textField.secureTextEntry = ((MJTextFieldTableRow *)self.row).secureTextEntry;
+    self.textField.spellCheckingType = row.spellCheckingType;
+    self.textField.keyboardType = row.keyboardType;
+    self.textField.keyboardAppearance = row.keyboardAppearance;
+    self.textField.returnKeyType = row.returnKeyType;
+    self.textField.enablesReturnKeyAutomatically = row.enablesReturnKeyAutomatically;
+    self.textField.secureTextEntry = row.secureTextEntry;
 }
 
 #pragma mark

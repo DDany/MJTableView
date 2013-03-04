@@ -99,6 +99,7 @@
     
     // multiple text input row
     MJTextViewTableRow *textViewEditRow = [MJTextViewTableRow row];
+    textViewEditRow.showTextViewBolderWhenEdit = YES;
     textViewEditRow.text = @"多行输入";
     textViewEditRow.stringValue = @"浦东南路3905号,博文园,6号502室(云台路地铁站3号口)";
     //textViewRow.rowHeight = 70;

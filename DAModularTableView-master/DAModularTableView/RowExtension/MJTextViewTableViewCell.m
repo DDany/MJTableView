@@ -8,6 +8,7 @@
 
 #import "MJTextViewTableViewCell.h"
 #import "MJTextViewTableRow.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MJTextViewTableViewCell ()<UITextViewDelegate>
 @property (nonatomic, strong) UITextView *textView;
@@ -68,24 +69,29 @@
 - (void)prepareForRow:(MJTextViewTableRow *)row
 {
     [super prepareForRow:row];
-    self.selectionStyle = ((MJTextViewTableRow *)self.row).selectionStyle;
-	self.accessoryType = ((MJTextViewTableRow *)self.row).accessoryType;
+    self.selectionStyle = row.selectionStyle;
+	self.accessoryType = row.accessoryType;
     
-    self.textView.text = ((MJTextViewTableRow *)self.row).stringValue;
-    self.textView.textColor = ((MJTextViewTableRow *)self.row).detailTextColor;
-    //self.textView.placeholder = ((MJTextViewTableRow *)self.row).placeHolder;
-    self.textView.autocorrectionType = ((MJTextViewTableRow *)self.row).autocorrectionType;
-	self.textView.autocapitalizationType = ((MJTextViewTableRow *)self.row).autocapitalizationType;
-	self.textView.font = ((MJTextViewTableRow *)self.row).detailTextFont;
+    self.textView.text = row.stringValue;
+    self.textView.textColor = row.detailTextColor;
+    //self.textView.placeholder = row.placeHolder;
+    self.textView.autocorrectionType = row.autocorrectionType;
+	self.textView.autocapitalizationType = row.autocapitalizationType;
+	self.textView.font = row.detailTextFont;
 	self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    self.textView.spellCheckingType = ((MJTextViewTableRow *)self.row).spellCheckingType;
-    self.textView.keyboardType = ((MJTextViewTableRow *)self.row).keyboardType;
-    self.textView.keyboardAppearance = ((MJTextViewTableRow *)self.row).keyboardAppearance;
-    self.textView.returnKeyType = ((MJTextViewTableRow *)self.row).returnKeyType;
-    self.textView.enablesReturnKeyAutomatically = ((MJTextViewTableRow *)self.row).enablesReturnKeyAutomatically;
-    self.textView.secureTextEntry = ((MJTextViewTableRow *)self.row).secureTextEntry;
-    self.textView.editable = ((MJTextViewTableRow *)self.row).editable;
+    self.textView.spellCheckingType = row.spellCheckingType;
+    self.textView.keyboardType = row.keyboardType;
+    self.textView.keyboardAppearance = row.keyboardAppearance;
+    self.textView.returnKeyType = row.returnKeyType;
+    self.textView.enablesReturnKeyAutomatically = row.enablesReturnKeyAutomatically;
+    self.textView.secureTextEntry = row.secureTextEntry;
+    self.textView.editable = row.editable;
     self.textView.userInteractionEnabled = self.textView.editable;
+
+    if (self.textView.editable && row.showTextViewBolderWhenEdit) {
+        self.textView.layer.borderWidth = 1.0f;
+        self.textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    }
 }
 
 #pragma mark

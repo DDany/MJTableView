@@ -57,11 +57,11 @@
 }
 
 #pragma mark 
-- (void)prepareForRow:(MJTableRow *)row
+- (void)prepareForRow:(MJDateTableRow *)row
 {
     [super prepareForRow:row];
     
-    [self.dateFormatter setDateFormat:((MJDateTableRow *)self.row).showDateFormatter];
+    [self.dateFormatter setDateFormat:row.showDateFormatter];
     
     self.detailTextLabel.text = [self.dateFormatter stringFromDate:self.dateValue];
 }

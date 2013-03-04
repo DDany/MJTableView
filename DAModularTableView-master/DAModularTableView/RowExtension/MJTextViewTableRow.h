@@ -27,6 +27,7 @@
 
 @property (nonatomic, assign) BOOL dynamicAdjustRowHeightWhenShow;  // default is YES
 @property (nonatomic, assign) BOOL dynamicAdjustRowHeightWhenEdit;  // default is NO
+@property (nonatomic, assign) BOOL showTextViewBolderWhenEdit;      // default is NO
 @property (nonatomic, assign) CGFloat minRowHeight;
 @property (nonatomic, assign) CGFloat maxRowHeight;
 
