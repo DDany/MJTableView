@@ -12,8 +12,10 @@
 
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) UIFont *textFont;
+@property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) NSString *detailText;
 @property (nonatomic, strong) UIFont *detailTextFont;
+@property (nonatomic, strong) UIColor *detailTextColor;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIView *accessoryView;
 

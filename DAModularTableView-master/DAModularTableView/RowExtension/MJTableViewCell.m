@@ -36,8 +36,14 @@
     if (self.row.textFont) {
         self.textLabel.font = self.row.textFont;
     }
+    if (self.row.textColor) {
+        self.textLabel.textColor = self.row.textColor;
+    }
     if (self.row.detailTextFont) {
         self.detailTextLabel.font = self.row.detailTextFont;
+    }
+    if (self.row.detailTextColor) {
+        self.detailTextLabel.textColor = self.row.detailTextColor;
     }
     self.imageView.image = self.row.image;
     self.accessoryView = self.row.accessoryView;

@@ -82,17 +82,32 @@
     };
     [section0.rows addObject:textFieldRow];
 
-    // multiple text input row
+    // multiple text show row
     MJTextViewTableRow *textViewRow = [MJTextViewTableRow row];
-    textViewRow.text = @"Text view row";
-    textViewRow.stringValue = @"Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me,Test me";
-    textViewRow.rowHeight = 70;
-    textViewRow.dynamicAdjustRowHeight = YES;
+    textViewRow.text = @"多行显示";
+    textViewRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    textViewRow.selectionStyle = UITableViewCellSelectionStyleBlue;
+    textViewRow.stringValue = @"浦东南路3905号,博文园,6号502室(云台路地铁站3号口)";
+    textViewRow.dynamicAdjustRowHeightWhenShow = YES;
+    textViewRow.editable = NO;
     textViewRow.minRowHeight = 44;
-    textViewRow.onValueChanged = ^(NSString *newText){
-        NSLog(@"log here:%@", newText);
+    textViewRow.didSelectBlock = ^(NSIndexPath *indexPath){
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+        NSLog(@"log here:Multiple text show row selected.");
     };
     [section0.rows addObject:textViewRow];
+    
+    // multiple text input row
+    MJTextViewTableRow *textViewEditRow = [MJTextViewTableRow row];
+    textViewEditRow.text = @"多行输入";
+    textViewEditRow.stringValue = @"浦东南路3905号,博文园,6号502室(云台路地铁站3号口)";
+    //textViewRow.rowHeight = 70;
+    textViewEditRow.dynamicAdjustRowHeightWhenEdit = YES;
+    textViewEditRow.minRowHeight = 44;
+    textViewEditRow.onValueChanged = ^(NSString *newText){
+        NSLog(@"log here:%@", newText);
+    };
+    [section0.rows addObject:textViewEditRow];
 
     [self.tableView insertSection:section0];
     
@@ -103,7 +118,6 @@
     // button row
     MJTableRow *buttonRow = [MJTableRow row];
     buttonRow.text = @"                         我的拼车";
-    buttonRow.textFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:16];
     buttonRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     buttonRow.selectionStyle = UITableViewCellSelectionStyleBlue;
     buttonRow.didSelectBlock = ^(NSIndexPath *indexPath){

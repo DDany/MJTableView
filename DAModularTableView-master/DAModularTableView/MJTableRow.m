@@ -28,6 +28,12 @@
         self.accessoryType = UITableViewCellAccessoryNone;
         self.cellStyle = UITableViewCellStyleDefault;
         self.rowAnimation = UITableViewRowAnimationAutomatic;
+        
+        self.textFont = [UIFont boldSystemFontOfSize:16.0f];
+        self.textColor = [UIColor blackColor];
+        self.detailTextFont = [UIFont systemFontOfSize:14.0f];
+        self.detailTextColor = [UIColor brownColor];
+
     }
     return self;
 }

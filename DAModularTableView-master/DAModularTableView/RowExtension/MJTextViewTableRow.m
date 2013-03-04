@@ -24,6 +24,8 @@
     if (self) {
         self.cellStyle = UITableViewCellStyleValue1;
         
+        self.selectionStyle = UITableViewCellEditingStyleNone;
+        self.accessoryType = UITableViewCellAccessoryNone;
         self.autocapitalizationType = UITextAutocapitalizationTypeSentences;
         self.autocorrectionType = UITextAutocorrectionTypeDefault;
         self.spellCheckingType = UITextSpellCheckingTypeDefault;
@@ -33,7 +35,8 @@
         self.enablesReturnKeyAutomatically = NO;
         self.secureTextEntry = NO;
         
-        self.maxRowHeight = 80;
+        self.dynamicAdjustRowHeightWhenShow = YES;
+        self.maxRowHeight = 130;
         self.editable = YES;
     }
     return self;
@@ -48,5 +51,35 @@
     return cell;
 }
 
+#pragma mark - Getter
+- (CGFloat)rowHeight {
+    if (!self.editable && self.dynamicAdjustRowHeightWhenShow) {
+        
+        CGSize textSize = CGSizeZero;
+        
+        // Dynamic adjust rowHeight.
+        if (self.text && self.text.length > 0) {
+            // text and detailText.
+            textSize = [self.text sizeWithFont:self.textFont
+                                    constrainedToSize:CGSizeMake(100, 44)
+                                        lineBreakMode:NSLineBreakByWordWrapping];
+        }else {
+            // only detailText.
+            // do nothing.
+        }
+        
+        CGFloat contentViewWidth = 280;
+        CGFloat contentViewWidhtForDetail = contentViewWidth - textSize.width - 10;
+        
+        CGSize detailSize = [self.stringValue sizeWithFont:self.detailTextFont
+                                         constrainedToSize:CGSizeMake(contentViewWidhtForDetail, self.maxRowHeight)
+                                             lineBreakMode:NSLineBreakByWordWrapping];
+        
+        [self setRowHeight:detailSize.height + 0];
+        
+    }
+    
+    return [super rowHeight];
+}
 
 @end

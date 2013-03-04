@@ -115,7 +115,7 @@
 - (UILabel *)titleLabelAtIndex:(NSUInteger)index total:(NSUInteger)total alignment:(SplitTextAlignment)alignment {
     CGRect frame = [self frameForTitleAtIndex:index total:total alignment:alignment];
     UILabel *title = [[UILabel alloc] initWithFrame:frame];
-    
+    title.textColor = self.row.textColor;
     title.backgroundColor = [UIColor clearColor];
     title.textAlignment = NSTextAlignmentCenter;
     if (alignment == SplitTextAlignmentVertical) {
@@ -129,7 +129,7 @@
 - (UILabel *)valueLabelAtIndex:(NSUInteger)index total:(NSUInteger)total alignment:(SplitTextAlignment)alignment {
     CGRect frame = [self frameForValueAtIndex:index total:total alignment:alignment];
     UILabel *value = [[UILabel alloc] initWithFrame:frame];
-    
+    value.textColor = self.row.detailTextColor;
     value.backgroundColor = [UIColor clearColor];
     value.textAlignment = NSTextAlignmentCenter;
     if (alignment == SplitTextAlignmentVertical) {

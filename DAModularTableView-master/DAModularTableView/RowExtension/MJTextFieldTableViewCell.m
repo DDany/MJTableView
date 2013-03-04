@@ -72,11 +72,12 @@
 	self.accessoryType = UITableViewCellAccessoryNone;
     
     self.textField.text = ((MJTextFieldTableRow *)self.row).stringValue;
+    self.textField.textColor = ((MJTextFieldTableRow *)self.row).detailTextColor;
     self.textField.placeholder = ((MJTextFieldTableRow *)self.row).placeHolder;
     self.textField.autocorrectionType = ((MJTextFieldTableRow *)self.row).autocorrectionType;
 	self.textField.autocapitalizationType = ((MJTextFieldTableRow *)self.row).autocapitalizationType;
 	self.textField.textAlignment = NSTextAlignmentRight;
-	self.textField.font = [UIFont systemFontOfSize:16.0f];
+	self.textField.font = ((MJTextFieldTableRow *)self.row).detailTextFont;
 	self.textField.clearButtonMode = UITextFieldViewModeNever;
 	self.textField.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.textField.spellCheckingType = ((MJTextFieldTableRow *)self.row).spellCheckingType;

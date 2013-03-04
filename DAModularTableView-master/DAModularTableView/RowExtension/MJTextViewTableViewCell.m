@@ -27,6 +27,7 @@
 	self.textView.autocapitalizationType = UITextAutocapitalizationTypeWords;
 	self.textView.font = [UIFont systemFontOfSize:16.0f];
 	self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.textView.contentInset = UIEdgeInsetsMake(-10, 0, -10, 0);
 	[self addSubview:self.textView];
 	
 	self.textView.delegate = self;
@@ -67,14 +68,15 @@
 - (void)prepareForRow:(MJTextViewTableRow *)row
 {
     [super prepareForRow:row];
-    self.selectionStyle = UITableViewCellSelectionStyleNone;
-	self.accessoryType = UITableViewCellAccessoryNone;
+    self.selectionStyle = ((MJTextViewTableRow *)self.row).selectionStyle;
+	self.accessoryType = ((MJTextViewTableRow *)self.row).accessoryType;
     
     self.textView.text = ((MJTextViewTableRow *)self.row).stringValue;
+    self.textView.textColor = ((MJTextViewTableRow *)self.row).detailTextColor;
     //self.textView.placeholder = ((MJTextViewTableRow *)self.row).placeHolder;
     self.textView.autocorrectionType = ((MJTextViewTableRow *)self.row).autocorrectionType;
 	self.textView.autocapitalizationType = ((MJTextViewTableRow *)self.row).autocapitalizationType;
-	self.textView.font = [UIFont systemFontOfSize:16.0f];
+	self.textView.font = ((MJTextViewTableRow *)self.row).detailTextFont;
 	self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.textView.spellCheckingType = ((MJTextViewTableRow *)self.row).spellCheckingType;
     self.textView.keyboardType = ((MJTextViewTableRow *)self.row).keyboardType;
@@ -83,6 +85,7 @@
     self.textView.enablesReturnKeyAutomatically = ((MJTextViewTableRow *)self.row).enablesReturnKeyAutomatically;
     self.textView.secureTextEntry = ((MJTextViewTableRow *)self.row).secureTextEntry;
     self.textView.editable = ((MJTextViewTableRow *)self.row).editable;
+    self.textView.userInteractionEnabled = self.textView.editable;
 }
 
 #pragma mark
@@ -129,22 +132,11 @@
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
-    if (((MJTextViewTableRow *)self.row).dynamicAdjustRowHeight) {
+    if (((MJTextViewTableRow *)self.row).dynamicAdjustRowHeightWhenEdit) {
         UITableView *tableView = [self tableView];
-        CGFloat minRowHeight = ((MJTextViewTableRow *)self.row).minRowHeight;
-        CGFloat maxRowHeight = ((MJTextViewTableRow *)self.row).maxRowHeight;
         
-        CGFloat height = [self.textView.text sizeWithFont:self.textView.font
-                                        constrainedToSize:CGSizeMake(self.textView.bounds.size.width, 1000)
-                                            lineBreakMode:NSLineBreakByWordWrapping].height;
-        if (height < minRowHeight) {
-            self.row.rowHeight = minRowHeight;
-        }else if (height > maxRowHeight) {
-            self.row.rowHeight = maxRowHeight;
-        }else {
-            self.row.rowHeight = height;
-            
-        }
+        self.row.rowHeight = [self suitableHeight];
+        
         [tableView beginUpdates];
         [tableView endUpdates];
     }
@@ -155,15 +147,33 @@
 }
 
 #pragma mark
+- (CGFloat)suitableHeight {
+    
+    CGFloat minRowHeight = ((MJTextViewTableRow *)self.row).minRowHeight;
+    CGFloat maxRowHeight = ((MJTextViewTableRow *)self.row).maxRowHeight;
+    
+    CGFloat height = [self.textView.text sizeWithFont:self.textView.font
+                                    constrainedToSize:CGSizeMake(self.textView.bounds.size.width, 1000)
+                                        lineBreakMode:NSLineBreakByWordWrapping].height;
+    if (height < minRowHeight) {
+        return minRowHeight;
+    }else if (height > maxRowHeight) {
+        return maxRowHeight;
+    }else {
+        return height;
+    }
+}
+
+#pragma mark
 - (void)layoutSubviews {
 	[super layoutSubviews];
-	CGRect editFrame = CGRectInset(self.contentView.frame, 10, 10);
+	CGRect editFrame = CGRectInset(self.contentView.frame, 10, 2);
 	
 	if (self.textLabel.text && [self.textLabel.text length] != 0) {
 		CGSize textSize = [self.textLabel sizeThatFits:CGSizeZero];
 		editFrame.origin.x += textSize.width + 10;
 		editFrame.size.width -= textSize.width + 10;
-        editFrame.size.height = self.bounds.size.height - 20;
+        editFrame.size.height = self.bounds.size.height - 4;
 	} else {
 		CGSize textSize = [self.textView sizeThatFits:CGSizeZero];
         editFrame.origin.y = (self.contentView.frame.size.height - textSize.height)/2;
