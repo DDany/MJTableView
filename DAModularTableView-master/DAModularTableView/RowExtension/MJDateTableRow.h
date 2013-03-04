@@ -11,6 +11,7 @@
 @interface MJDateTableRow : MJTableRow
 
 + (MJDateTableRow *)row;
++ (MJDateTableRow *)rowWithText:(NSString *)text date:(NSDate *)date;
 
 @property (nonatomic, strong) NSDate *dateValue;
 

@@ -14,14 +14,19 @@
 #pragma mark - Public Methods
 
 // override this method for your custom MJTableRow.
-+ (MJTableRow *)row
-{
++ (MJTableRow *)row {
     return [[MJTableRow alloc] init];
 }
 
++ (MJTableRow *)rowWithText:(NSString *)text detailText:(NSString *)detailText {
+    MJTableRow *row = [self row];
+    row.text = text;
+    row.detailText = detailText;
+    return row;
+}
+
 // override this method for your custom init.
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -34,6 +39,7 @@
         self.detailTextFont = [UIFont systemFontOfSize:14.0f];
         self.detailTextColor = [UIColor brownColor];
         
+        self.reuseIdentifier = NSStringFromClass([self class]);
         self.shouldDeselectAfterSelect = YES;
     }
     return self;
@@ -41,8 +47,7 @@
 
 #pragma mark - Create cell
 // override this method for your custom cell.
-- (UITableViewCell *)cell
-{
+- (UITableViewCell *)cell {
     MJTableViewCell *cell = [[MJTableViewCell alloc] initWithStyle:self.cellStyle reuseIdentifier:self.reuseIdentifier];
         
     return cell;

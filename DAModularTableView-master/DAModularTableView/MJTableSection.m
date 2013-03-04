@@ -12,13 +12,11 @@
 
 #pragma mark - Public Methods
 
-+ (MJTableSection *)section
-{
++ (MJTableSection *)section {
     return [[MJTableSection alloc] init];
 }
 
-- (id)init
-{
+- (id)init {
     self = [super init];
     if (self)
     {
@@ -29,15 +27,13 @@
     return self;
 }
 
-- (MJTableRow *)rowAtIndex:(NSInteger)index;
-{
+- (MJTableRow *)rowAtIndex:(NSInteger)index {
     return ([self rows])[index];
 }
 
 #pragma mark - Property Methods
 
-- (NSMutableArray *)rows
-{
+- (NSMutableArray *)rows {
     if (!_rows) {
         _rows = @[].mutableCopy;
     }

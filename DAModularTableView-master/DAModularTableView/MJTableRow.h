@@ -37,6 +37,7 @@
 
 #pragma mark - Public Methods
 + (MJTableRow *)row;
++ (MJTableRow *)rowWithText:(NSString *)text detailText:(NSString *)detailText;
 
 #pragma mark - Create cell
 - (UITableViewCell *)cell;

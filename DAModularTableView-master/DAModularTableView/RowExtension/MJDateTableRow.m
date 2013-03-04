@@ -13,13 +13,18 @@
 
 #pragma mark - Public Methods
 
-+ (MJDateTableRow *)row
-{
++ (MJDateTableRow *)row {
     return [[MJDateTableRow alloc] init];
 }
 
-- (id)init
-{
++ (MJDateTableRow *)rowWithText:(NSString *)text date:(NSDate *)date {
+    MJDateTableRow *row = [self row];
+    row.text = text;
+    row.dateValue = date;
+    return row;
+}
+
+- (id)init {
     self = [super init];
     if (self) {
         _dateValue = [NSDate date];

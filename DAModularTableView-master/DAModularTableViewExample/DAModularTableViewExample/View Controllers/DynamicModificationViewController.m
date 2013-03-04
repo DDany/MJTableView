@@ -36,11 +36,9 @@
     MJTableSection *section0 = [MJTableSection section];
     
     // header change row
-    MJTableRow *headerChangeRow = [MJTableRow row];
-    headerChangeRow.reuseIdentifier = @"headerChangeRow";
-    headerChangeRow.text = @"                header Change";
+    MJTableRow *headerChangeRow = [MJTableRow rowWithText:@"                header Change"
+                                               detailText:nil];
     headerChangeRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    headerChangeRow.rowHeight = 32.0f;
     headerChangeRow.didSelectBlock = ^(NSIndexPath *indexPath){
         MJTableSection *section = [self.tableView sectionAtIndex:0];
         section.headerHeight = section.headerHeight == 80 ? 160 : 80;
@@ -50,10 +48,8 @@
     [section0.rows addObject:headerChangeRow];
     
     // height change row
-    MJTableRow *heightChangeRow = [MJTableRow row];
-    heightChangeRow.reuseIdentifier = @"heightChangeRow";
-    heightChangeRow.text = @"                Height Change";
-    heightChangeRow.rowHeight = 32.0f;
+    MJTableRow *heightChangeRow = [MJTableRow rowWithText:@"                Height Change"
+                                               detailText:nil];
     heightChangeRow.didSelectBlock = ^(NSIndexPath *indexPath){
         MJTableRow *row = [self.tableView rowAtIndexPath:indexPath];
         row.rowHeight = (row.rowHeight == 32.0f ? 120.0f : 32.0f);
@@ -63,9 +59,8 @@
     [section0.rows addObject:heightChangeRow];
     
     // text change row
-    MJTableRow *textChangeRow = [MJTableRow row];
-    textChangeRow.reuseIdentifier = @"textChangeRow";
-    textChangeRow.text = @"Text Change";
+    MJTableRow *textChangeRow = [MJTableRow rowWithText:@"Text Change"
+                                             detailText:nil];
     textChangeRow.didSelectBlock = ^(NSIndexPath *indexPath){
         self.view.tag += 1;
         MJTableRow *tableRow = [self.tableView rowAtIndexPath:indexPath];
@@ -75,20 +70,16 @@
     [section0.rows addObject:textChangeRow];
 
     // multiline text row
-    MJTableRow *multiLineRow = [MJTableRow row];
-    multiLineRow.reuseIdentifier = @"multiLineRow";
-    multiLineRow.text = @"Multiline Text";
+    MJTableRow *multiLineRow = [MJTableRow rowWithText:@"Multiline Text"
+                                            detailText:@"他人的个人资料 TA的拼车里没有发布过事件的情况下 您的附近暂无人拼车改为：TA暂没有发布过拼车"];
     multiLineRow.isDetailTextMultiLine = YES;
     multiLineRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    multiLineRow.detailText = @"他人的个人资料 TA的拼车里没有发布过事件的情况下 您的附近暂无人拼车改为：TA暂没有发布过拼车";
     
     [section0.rows addObject:multiLineRow];
     
     // style change row
-    MJTableRow *styleChangeRow = [MJTableRow row];
-    styleChangeRow.reuseIdentifier = @"styleChangeRow";
-    styleChangeRow.text = @"Style Change";
-    styleChangeRow.detailText = @"Detail Text";
+    MJTableRow *styleChangeRow = [MJTableRow rowWithText:@"Style Change"
+                                              detailText:@"Detail Text"];
     styleChangeRow.cellStyle = UITableViewCellStyleValue1;
     styleChangeRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     styleChangeRow.didSelectBlock = ^(NSIndexPath *indexPath){
@@ -100,19 +91,16 @@
     [section0.rows addObject:styleChangeRow];
 
     // date row
-    MJDateTableRow *dateRow = [MJDateTableRow row];
-    dateRow.reuseIdentifier = @"dateRow";
-    dateRow.text = @"Date row";
+    MJDateTableRow *dateRow = [MJDateTableRow rowWithText:@"Date row"
+                                                     date:[NSDate date]];
     dateRow.onValueChanged = ^(NSDate *newDate){
         NSLog(@"log here:%@", newDate);
     };
     [section0.rows addObject:dateRow];
     
     // integer input row
-    MJIntegerInputTableRow *integerRow = [MJIntegerInputTableRow row];
-    integerRow.reuseIdentifier = @"integerRow";
-    integerRow.text = @"Integer Row";
-    integerRow.value = 5;
+    MJIntegerInputTableRow *integerRow = [MJIntegerInputTableRow rowWithText:@"Integer Row"
+                                                                    intValue:5];
     integerRow.limitLength = 2;
     integerRow.onValueChanged = ^(NSString *newText){
         NSLog(@"log here:%@", newText);
@@ -120,9 +108,8 @@
     [section0.rows addObject:integerRow];
     
     // text input row
-    MJTextFieldTableRow *textFieldRow = [MJTextFieldTableRow row];
-    textFieldRow.reuseIdentifier = @"textFieldRow";
-    textFieldRow.text = @"Text field row";
+    MJTextFieldTableRow *textFieldRow = [MJTextFieldTableRow rowWithText:@"Text field row"
+                                                             stringValue:nil];
     textFieldRow.placeHolder = @"请输入字符";
     textFieldRow.onValueChanged = ^(NSString *newText){
         NSLog(@"log here:%@", newText);
@@ -130,29 +117,21 @@
     [section0.rows addObject:textFieldRow];
 
     // multiple text show row
-    MJTextViewTableRow *textViewRow = [MJTextViewTableRow row];
-    textViewRow.reuseIdentifier = @"textViewRow";
-    textViewRow.text = @"多行显示";
+    MJTextViewTableRow *textViewRow = [MJTextViewTableRow rowWithText:@"MultiText Shown"
+                                                          stringValue:@"浦东南路3905号,博文园,6号502室(云台路地铁站3号口)"];
     textViewRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     textViewRow.selectionStyle = UITableViewCellSelectionStyleBlue;
-    textViewRow.stringValue = @"浦东南路3905号,博文园,6号502室(云台路地铁站3号口)";
-    textViewRow.dynamicAdjustRowHeightWhenShow = YES;
     textViewRow.editable = NO;
-    textViewRow.minRowHeight = 44;
     textViewRow.didSelectBlock = ^(NSIndexPath *indexPath){
         NSLog(@"log here:Multiple text show row selected.");
     };
     [section0.rows addObject:textViewRow];
     
     // multiple text input row
-    MJTextViewTableRow *textViewEditRow = [MJTextViewTableRow row];
-    textViewEditRow.reuseIdentifier = @"textViewEditRow";
+    MJTextViewTableRow *textViewEditRow = [MJTextViewTableRow rowWithText:@"MultiText Edit"
+                                                              stringValue:@"浦东南路3905号,博文园,6号502室(云台路地铁站3号口)"];
     textViewEditRow.showTextViewBolderWhenEdit = YES;
-    textViewEditRow.text = @"多行输入";
-    textViewEditRow.stringValue = @"浦东南路3905号,博文园,6号502室(云台路地铁站3号口)";
-    //textViewRow.rowHeight = 70;
     textViewEditRow.dynamicAdjustRowHeightWhenEdit = YES;
-    textViewEditRow.minRowHeight = 44;
     textViewEditRow.onValueChanged = ^(NSString *newText){
         NSLog(@"log here:%@", newText);
     };
@@ -164,7 +143,6 @@
     
     // button row
     MJTableRow *buttonRow = [MJTableRow row];
-    buttonRow.reuseIdentifier = @"buttonRow";
     buttonRow.text = @"                         我的拼车";
     buttonRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     buttonRow.selectionStyle = UITableViewCellSelectionStyleBlue;
@@ -174,12 +152,9 @@
     [section1.rows addObject:buttonRow];
     
     // split row
-    MJSplitTableRow *splitRow = [MJSplitTableRow row];
-    splitRow.reuseIdentifier = @"splitRow";
-    splitRow.rowHeight = 36.0;
-    splitRow.alignment = SplitTextAlignmentVertical;
-    splitRow.titles = @[@"拼车次数", @"赞", @"没到"];
-    splitRow.values = @[@"227", @"3", @"2"];
+    MJSplitTableRow *splitRow = [MJSplitTableRow rowWithTitles:@[@"拼车次数", @"赞", @"没到"]
+                                                        values:@[@"227", @"3", @"2"]
+                                                     alignment:SplitTextAlignmentVertical];
     splitRow.didSelectBlock = ^(NSIndexPath *indexPath){
         MJSplitTableRow *tableRow = (MJSplitTableRow *)[self.tableView rowAtIndexPath:indexPath];
         if ([tableRow isKindOfClass:[MJSplitTableRow class]]) {
@@ -191,22 +166,18 @@
     [section1.rows addObject:splitRow];
     
     // custom row
-    MJTableRow *customRow = [MJTableRow row];
-    customRow.reuseIdentifier = @"customRow";
-    customRow.rowHeight = 76.0f;
-    customRow.cellForRowBlock = ^(UITableViewCell *cell, NSIndexPath *indexPath) {
+    MJCustomTableRow *customRow = [MJCustomTableRow rowWithHeight:76.0f cellForRowBlock:^(UITableViewCell *cell, NSIndexPath *indexPath) {
         UIImage *route_prev = [UIImage imageNamed:@"map_route_prev.png"];
         UIImageView *route_prev_view = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 288, 60)];
         route_prev_view.image = route_prev;
         route_prev_view.contentMode = UIViewContentModeScaleAspectFill;
-        //route_prev_view.layer.cornerRadius = 5.0;
         route_prev_view.layer.masksToBounds = NO;
         route_prev_view.layer.shouldRasterize = YES;
         route_prev_view.layer.rasterizationScale = [UIScreen mainScreen].scale;
         
         [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         [cell.contentView addSubview:route_prev_view];
-    };
+    }];
     
     [section1.rows addObject:customRow];
     
@@ -215,12 +186,10 @@
     MJTableSection *section2 = [MJTableSection section];
     
     // segemented row
-    MJSegmentedTableRow *segmentedRow = [MJSegmentedTableRow row];
-    segmentedRow.reuseIdentifier = @"segmentedRow";
-    segmentedRow.text = @"Segmented Row";
-    segmentedRow.titles = @[@"1", @"2", @"3"];
-    segmentedRow.keys = @[@"11", @"22", @"33"];
-    segmentedRow.rowHeight = 44.0f;
+    MJSegmentedTableRow *segmentedRow = [MJSegmentedTableRow rowWithText:@"Segmented Row"
+                                                                  titles:@[@"1", @"2", @"3"]
+                                                                    keys:@[@"11", @"22", @"33"]
+                                                             selectedKey:@"22"];
     segmentedRow.onValueChanged = ^(id newKey) {
         NSLog(@"log here:%@", newKey);
     };

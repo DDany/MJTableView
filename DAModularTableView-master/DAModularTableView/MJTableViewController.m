@@ -27,15 +27,13 @@
     return self;
 }
 
-- (void)loadView
-{
+- (void)loadView {
     self.tableView = [[MJTableView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]
                                                          style:self.style];
     self.view = self.tableView;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 

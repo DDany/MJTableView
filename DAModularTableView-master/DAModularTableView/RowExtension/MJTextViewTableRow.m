@@ -13,13 +13,19 @@
 
 #pragma mark - Public Methods
 
-+ (MJTextViewTableRow *)row
-{
++ (MJTextViewTableRow *)row {
     return [[MJTextViewTableRow alloc] init];
 }
 
-- (id)init
-{
+
++ (MJTextViewTableRow *)rowWithText:(NSString *)text stringValue:(NSString *)string {
+    MJTextViewTableRow *row = [self row];
+    row.text = text;
+    row.stringValue = string;
+    return row;
+}
+
+- (id)init {
     self = [super init];
     if (self) {
         self.cellStyle = UITableViewCellStyleValue1;
@@ -37,6 +43,7 @@
         
         self.dynamicAdjustRowHeightWhenShow = YES;
         self.maxRowHeight = 130;
+        self.minRowHeight = 44;
         self.editable = YES;
     }
     return self;
@@ -59,7 +66,7 @@
         if (self.text && self.text.length > 0) {
             // text and detailText.
             textSize = [self.text sizeWithFont:self.textFont
-                             constrainedToSize:CGSizeMake(100, 44)
+                             constrainedToSize:CGSizeMake(320, 44)
                                  lineBreakMode:NSLineBreakByWordWrapping];
         }else {
             // only detailText.

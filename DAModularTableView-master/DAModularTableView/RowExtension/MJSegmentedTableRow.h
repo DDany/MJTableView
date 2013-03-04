@@ -11,6 +11,7 @@
 @interface MJSegmentedTableRow : MJTableRow
 
 + (MJSegmentedTableRow *)row;
++ (MJSegmentedTableRow *)rowWithText:(NSString *)text titles:(NSArray *)titles keys:(NSArray *)keys selectedKey:(id)selectedKey;
 
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSArray *keys;

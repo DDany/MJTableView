@@ -12,13 +12,18 @@
 
 #pragma mark - Public Methods
 
-+ (MJIntegerInputTableRow *)row
-{
++ (MJIntegerInputTableRow *)row {
     return [[MJIntegerInputTableRow alloc] init];
 }
 
-- (id)init
-{
++ (MJIntegerInputTableRow *)rowWithText:(NSString *)text intValue:(NSUInteger)value {
+    MJIntegerInputTableRow *row = [self row];
+    row.text = text;
+    row.value = value;
+    return row;
+}
+
+- (id)init {
     self = [super init];
     if (self) {
         self.cellStyle = UITableViewCellStyleValue1;

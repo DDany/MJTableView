@@ -23,8 +23,7 @@
     UIToolbar           *inputAccessoryView;
 }
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
@@ -34,8 +33,7 @@
 }
 
 #pragma mark - init
-- (void)initialize
-{
+- (void)initialize {
     self.dateValue = [NSDate date];
 	
     // Initialization code
@@ -57,8 +55,7 @@
 }
 
 #pragma mark 
-- (void)prepareForRow:(MJDateTableRow *)row
-{
+- (void)prepareForRow:(MJDateTableRow *)row {
     [super prepareForRow:row];
     
     [self.dateFormatter setDateFormat:row.showDateFormatter];
@@ -68,8 +65,7 @@
 }
 
 #pragma mark
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
@@ -79,18 +75,15 @@
 }
 
 #pragma mark
-- (BOOL)canBecomeFirstResponder
-{
+- (BOOL)canBecomeFirstResponder {
     return YES;
 }
 
-- (BOOL)becomeFirstResponder
-{
+- (BOOL)becomeFirstResponder {
     return [super becomeFirstResponder];
 }
 
-- (BOOL)resignFirstResponder
-{
+- (BOOL)resignFirstResponder {
     UITableView *tableView = [self tableView];
     if ([tableView isKindOfClass:[UITableView class]]) {
         [tableView deselectRowAtIndexPath:[tableView indexPathForCell:self] animated:YES];

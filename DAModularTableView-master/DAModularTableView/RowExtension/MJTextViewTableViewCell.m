@@ -67,8 +67,7 @@
 }
 
 #pragma mark
-- (void)prepareForRow:(MJTextViewTableRow *)row
-{
+- (void)prepareForRow:(MJTextViewTableRow *)row {
     [super prepareForRow:row];
     self.selectionStyle = row.selectionStyle;
 	self.accessoryType = row.accessoryType;
@@ -92,6 +91,8 @@
     if (self.textView.editable && row.showTextViewBolderWhenEdit) {
         self.textView.layer.borderWidth = 1.0f;
         self.textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    }else {
+        self.textView.layer.borderWidth = 0.0f;;
     }
 }
 

@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, SplitTextAlignment) {
 @interface MJSplitTableRow : MJTableRow
 
 + (MJSplitTableRow *)row;
++ (MJSplitTableRow *)rowWithTitles:(NSArray *)titles values:(NSArray *)values alignment:(SplitTextAlignment)alignment;
 
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSArray *values;

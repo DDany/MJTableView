@@ -11,6 +11,7 @@
 @interface MJTextFieldTableRow : MJTableRow <UITextInputTraits>
 
 + (MJTextFieldTableRow *)row;
++ (MJTextFieldTableRow *)rowWithText:(NSString *)text stringValue:(NSString *)string;
 
 @property(nonatomic) UITextAutocapitalizationType autocapitalizationType; // default is UITextAutocapitalizationTypeSentences
 @property(nonatomic) UITextAutocorrectionType autocorrectionType;         // default is UITextAutocorrectionTypeDefault

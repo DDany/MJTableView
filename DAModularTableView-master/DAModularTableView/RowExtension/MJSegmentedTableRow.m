@@ -15,8 +15,18 @@
     return [[MJSegmentedTableRow alloc] init];
 }
 
-- (id)init
-{
++ (MJSegmentedTableRow *)rowWithText:(NSString *)text titles:(NSArray *)titles keys:(NSArray *)keys selectedKey:(id)selectedKey {
+    MJSegmentedTableRow *row = [self row];
+    
+    row.text = text;
+    row.titles = titles;
+    row.keys = keys;
+    row.seletedKey = selectedKey;
+    
+    return row;
+}
+
+- (id)init {
     self = [super init];
     if (self) {
         self.cellStyle = UITableViewCellStyleValue1;

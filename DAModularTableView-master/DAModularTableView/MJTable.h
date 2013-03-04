@@ -20,5 +20,6 @@
 #import "MJSegmentedTableRow.h"
 #import "MJSplitTableRow.h"
 #import "MJIntegerInputTableRow.h"
+#import "MJCustomTableRow.h"
 
 #endif

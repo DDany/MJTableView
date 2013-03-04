@@ -13,13 +13,18 @@
 
 #pragma mark - Public Methods
 
-+ (MJTextFieldTableRow *)row
-{
++ (MJTextFieldTableRow *)row {
     return [[MJTextFieldTableRow alloc] init];
 }
 
-- (id)init
-{
++ (MJTextFieldTableRow *)rowWithText:(NSString *)text stringValue:(NSString *)string {
+    MJTextFieldTableRow *row = [self row];
+    row.text = text;
+    row.stringValue = string;
+    return row;
+}
+
+- (id)init {
     self = [super init];
     if (self) {
         self.cellStyle = UITableViewCellStyleValue1;

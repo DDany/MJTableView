@@ -11,13 +11,19 @@
 
 @implementation MJSplitTableRow
 
-+ (MJSplitTableRow *)row
-{
++ (MJSplitTableRow *)row {
     return [[MJSplitTableRow alloc] init];
 }
 
-- (id)init
-{
++ (MJSplitTableRow *)rowWithTitles:(NSArray *)titles values:(NSArray *)values alignment:(SplitTextAlignment)alignment {
+    MJSplitTableRow *row = [self row];
+    row.titles = titles;
+    row.values = values;
+    row.alignment = alignment;
+    return row;
+}
+
+- (id)init {
     self = [super init];
     if (self) {
         self.cellStyle = UITableViewCellStyleDefault;

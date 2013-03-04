@@ -41,16 +41,14 @@
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
 
 #pragma mark
-- (void)prepareForRow:(MJSegmentedTableRow *)row
-{
+- (void)prepareForRow:(MJSegmentedTableRow *)row {
     [super prepareForRow:row];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 	self.accessoryType = UITableViewCellAccessoryNone;

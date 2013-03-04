@@ -13,6 +13,7 @@
 @interface MJTextViewTableRow : MJTableRow
 
 + (MJTextViewTableRow *)row;
++ (MJTextViewTableRow *)rowWithText:(NSString *)text stringValue:(NSString *)string;
 
 @property(nonatomic) UITextAutocapitalizationType autocapitalizationType; // default is UITextAutocapitalizationTypeSentences
 @property(nonatomic) UITextAutocorrectionType autocorrectionType;         // default is UITextAutocorrectionTypeDefault

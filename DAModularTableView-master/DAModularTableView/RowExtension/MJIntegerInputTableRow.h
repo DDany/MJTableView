@@ -11,6 +11,7 @@
 @interface MJIntegerInputTableRow : MJTextFieldTableRow
 
 + (MJIntegerInputTableRow *)row;
++ (MJIntegerInputTableRow *)rowWithText:(NSString *)text intValue:(NSUInteger)value;
 
 @property (nonatomic, assign) NSUInteger value;
 
