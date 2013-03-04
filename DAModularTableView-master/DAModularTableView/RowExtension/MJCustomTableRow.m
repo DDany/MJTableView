@@ -29,7 +29,10 @@
     self = [super init];
     if (self) {
         // do nothing.
-        // self.cellForRowBlock = ^(UITableViewCell *cell, NSIndexPath *indexPath){};
+        self.cellForRowBlock = ^(UITableViewCell *cell, NSIndexPath *indexPath){
+            // you must add below code to your custom cellForRowBlock, because of the reuse case.
+            [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        };
     }
     return self;
 }
