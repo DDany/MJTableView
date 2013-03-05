@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSArray *keys;
 @property (nonatomic, strong) id seletedKey;
 
+@property (nonatomic, assign) CGSize fixedSize;
+
 @property(nonatomic, copy) void (^onValueChanged)(id newKey);
 
 @end

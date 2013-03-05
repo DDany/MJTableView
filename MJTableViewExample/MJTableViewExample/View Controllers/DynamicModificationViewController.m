@@ -193,14 +193,35 @@
     MJTableSection *section2 = [MJTableSection section];
     
     // segemented row
-    MJSegmentedTableRow *segmentedRow = [MJSegmentedTableRow rowWithText:@"Segmented Row"
-                                                                  titles:@[@"1", @"2", @"3"]
-                                                                    keys:@[@"11", @"22", @"33"]
-                                                             selectedKey:@"22"];
+    MJSegmentedTableRow *segmentedRow = [MJSegmentedTableRow rowWithText:@"Segmented 1"
+                                                                  titles:@[@"1", @"2"]
+                                                                    keys:@[@"11", @"22"]
+                                                             selectedKey:@"33"];
+    segmentedRow.fixedSize = CGSizeMake(100.0f, 30.0f);
     segmentedRow.onValueChanged = ^(id newKey) {
         NSLog(@"log here:%@", newKey);
     };
     [section2.rows addObject:segmentedRow];
+    // segemented row
+    MJSegmentedTableRow *segmentedRow1 = [MJSegmentedTableRow rowWithText:@"Segmented 2"
+                                                                  titles:@[@"1", @"2", @"3"]
+                                                                    keys:@[@"11", @"22", @"33"]
+                                                             selectedKey:@"22"];
+    segmentedRow1.onValueChanged = ^(id newKey) {
+        NSLog(@"log here:%@", newKey);
+    };
+    segmentedRow1.fixedSize = CGSizeMake(100.0f, 0);
+    [section2.rows addObject:segmentedRow1];
+    // segemented row
+    MJSegmentedTableRow *segmentedRow2 = [MJSegmentedTableRow rowWithText:@"Segmented 3"
+                                                                   titles:@[@"1", @"2", @"3"]
+                                                                     keys:@[@"11", @"22", @"33"]
+                                                              selectedKey:@"22"];
+    segmentedRow2.fixedSize = CGSizeMake(0, 30.0f);
+    segmentedRow2.onValueChanged = ^(id newKey) {
+        NSLog(@"log here:%@", newKey);
+    };
+    [section2.rows addObject:segmentedRow2];
         
     MJTextImageTableRow *textImageRow = [MJTextImageTableRow rowWithText:@"TextImage"
                                                               detailText:@"Mini Cooper"

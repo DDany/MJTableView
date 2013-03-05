@@ -75,11 +75,25 @@
 	CGRect editFrame = CGRectInset(self.contentView.frame, 10, 0);
 	
 	if (self.textLabel.text && [self.textLabel.text length] != 0) {
+        
 		CGSize textSize = [self.textLabel sizeThatFits:CGSizeZero];
 		editFrame.size.width -= textSize.width + 10;
-        editFrame.size.height = self.bounds.size.height - 20;
         editFrame.origin.x += textSize.width + 10;
-        editFrame.origin.y = (self.bounds.size.height - self.segment.bounds.size.height)/2;
+        
+        // adjust frame with fixed size.
+        CGSize fixedSize = ((MJSegmentedTableRow *)self.row).fixedSize;
+        if (fixedSize.width != 0) {
+            editFrame.origin.x += (editFrame.size.width - fixedSize.width);
+            editFrame.size.width = fixedSize.width;
+        }
+        
+        if (fixedSize.height != 0) {
+            editFrame.origin.y = (editFrame.size.height - fixedSize.height)/2;
+            editFrame.size.height = fixedSize.height;
+        }else {
+            editFrame.size.height = editFrame.size.height - 16;
+            editFrame.origin.y = 8;
+        }
 	}
     
 	self.segment.frame = editFrame;

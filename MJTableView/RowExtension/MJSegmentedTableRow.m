@@ -30,6 +30,7 @@
     self = [super init];
     if (self) {
         self.cellStyle = UITableViewCellStyleValue1;
+        self.fixedSize = CGSizeZero;
     }
     return self;
 }
