@@ -1,6 +1,6 @@
 //
 //  InformationViewController.m
-//  DAModularTableViewExample
+//  MJTableViewExample
 //
 //  Created by Daniel Amitay on 9/18/12.
 //  Copyright (c) 2012 Daniel Amitay. All rights reserved.
@@ -31,7 +31,7 @@
     [self.tableView insertSection:appSection];
     
     MJTableRow *appRow = [MJTableRow row];
-    appRow.text = @"DAModularTableView";
+    appRow.text = @"MJTableView";
     appRow.detailText = @"By Daniel Amitay";
     appRow.cellStyle = UITableViewCellStyleSubtitle;
     appRow.selectionStyle = UITableViewCellSelectionStyleNone;

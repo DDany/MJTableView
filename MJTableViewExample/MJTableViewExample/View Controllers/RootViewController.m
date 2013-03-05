@@ -1,6 +1,6 @@
 //
 //  RootViewController.m
-//  DAModularTableViewExample
+//  MJTableViewExample
 //
 //  Created by Daniel Amitay on 8/15/12.
 //  Copyright (c) 2012 Daniel Amitay. All rights reserved.
@@ -24,12 +24,16 @@
 {
     [super viewDidLoad];
     
-    self.title = @"DAModularTableView";
+    self.title = @"MJTableView";
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back"
                                                                              style:UIBarButtonItemStyleBordered
                                                                             target:nil
                                                                             action:nil];
+    
+    MJTableSection *section0 = [MJTableSection section];
+    section0.headerTitle = @"From DAModularTableViewExample";
+    [self.tableView insertSection:section0];
     
     MJTableRow *informationView = [MJTableRow row];
     informationView.text = @"Information View";
@@ -58,6 +62,18 @@
     };
     [self.tableView insertRow:mixedCellsRow];
     
+    MJTableRow *waterfallRow = [MJTableRow row];
+    waterfallRow.text = @"Waterfall Example";
+    waterfallRow.didSelectBlock = ^(NSIndexPath *indexPath){
+        WaterfallViewController *wvc = [[WaterfallViewController alloc] init];
+        [self.navigationController pushViewController:wvc animated:YES];
+    };
+    [self.tableView insertRow:waterfallRow];
+    
+    MJTableSection *section1 = [MJTableSection section];
+    section1.headerTitle = @"From MJTableViewExample";
+    [self.tableView insertSection:section1];
+    
     MJTableRow *dynamicModificationRow = [MJTableRow row];
     dynamicModificationRow.text = @"Dynamic Modification";
     dynamicModificationRow.didSelectBlock = ^(NSIndexPath *indexPath){
@@ -74,14 +90,6 @@
         [self.navigationController pushViewController:dmvc animated:YES];
     };
     [self.tableView insertRow:dynamicModificationTestRow];
-    
-    MJTableRow *waterfallRow = [MJTableRow row];
-    waterfallRow.text = @"Waterfall Example";
-    waterfallRow.didSelectBlock = ^(NSIndexPath *indexPath){
-        WaterfallViewController *wvc = [[WaterfallViewController alloc] init];
-        [self.navigationController pushViewController:wvc animated:YES];
-    };
-    [self.tableView insertRow:waterfallRow];
     
 }
 
