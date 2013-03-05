@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
     
-    self.title = @"Performance Test";
+    self.title = (self.performanceTestMode ? @"Performance Test" : @"MJTableView");
     
 
     for (int i = 0; i < (self.performanceTestMode ? 99 : 1); i++) {
@@ -210,7 +210,7 @@
     segmentedRow1.onValueChanged = ^(id newKey) {
         NSLog(@"log here:%@", newKey);
     };
-    segmentedRow1.fixedSize = CGSizeMake(100.0f, 0);
+    segmentedRow1.fixedSize = CGSizeMake(200.0f, 50.0f);
     [section2.rows addObject:segmentedRow1];
     // segemented row
     MJSegmentedTableRow *segmentedRow2 = [MJSegmentedTableRow rowWithText:@"Segmented 3"

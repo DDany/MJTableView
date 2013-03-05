@@ -41,6 +41,9 @@
         
         self.reuseIdentifier = NSStringFromClass([self class]);
         self.shouldDeselectAfterSelect = YES;
+        
+        // you should set rowHeight > 20.0f.
+        self.rowHeight = 33.0f;
     }
     return self;
 }

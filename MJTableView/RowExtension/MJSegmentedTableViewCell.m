@@ -83,11 +83,17 @@
         // adjust frame with fixed size.
         CGSize fixedSize = ((MJSegmentedTableRow *)self.row).fixedSize;
         if (fixedSize.width != 0) {
+            if (fixedSize.width > editFrame.size.width) {
+                fixedSize.width = editFrame.size.width;
+            }
             editFrame.origin.x += (editFrame.size.width - fixedSize.width);
             editFrame.size.width = fixedSize.width;
         }
         
         if (fixedSize.height != 0) {
+            if (fixedSize.height > editFrame.size.height) {
+                fixedSize.height = editFrame.size.height;
+            }
             editFrame.origin.y = (editFrame.size.height - fixedSize.height)/2;
             editFrame.size.height = fixedSize.height;
         }else {
@@ -96,6 +102,9 @@
         }
 	}
     
+    if (editFrame.origin.y < 0) {
+        editFrame.origin.y = 0;
+    }
 	self.segment.frame = editFrame;
 }
 
