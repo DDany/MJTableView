@@ -195,10 +195,16 @@
     };
     [section2.rows addObject:segmentedRow];
         
-    MJTextImageTableRow *textImageRow = [MJTextImageTableRow rowWithText:@"TextImage Row"
-                                                              detailText:@"广州本田"
+    MJTextImageTableRow *textImageRow = [MJTextImageTableRow rowWithText:@"TextImage"
+                                                              detailText:@"Mini Cooper"
                                                              detailImage:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mini"]]];
     textImageRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    textImageRow.didSelectBlock = ^(NSIndexPath *indexPath) {
+        MJTextImageTableRow *row = (MJTextImageTableRow *)[self.tableView rowAtIndexPath:indexPath];
+        row.alignment = row.alignment == TextImageAlignmentImageLeft ? TextImageAlignmentImageRight : TextImageAlignmentImageLeft;
+        
+        [self.tableView reloadRow:row animated:YES];
+    };
     [section2.rows addObject:textImageRow];
     
     [self.tableView insertSection:section_header];
