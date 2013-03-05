@@ -21,5 +21,6 @@
 #import "MJSplitTableRow.h"
 #import "MJIntegerInputTableRow.h"
 #import "MJCustomTableRow.h"
+#import "MJTextImageTableRow.h"
 
 #endif

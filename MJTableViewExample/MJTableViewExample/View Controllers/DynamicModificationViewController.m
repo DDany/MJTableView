@@ -194,6 +194,12 @@
         NSLog(@"log here:%@", newKey);
     };
     [section2.rows addObject:segmentedRow];
+        
+    MJTextImageTableRow *textImageRow = [MJTextImageTableRow rowWithText:@"TextImage Row"
+                                                              detailText:@"广州本田"
+                                                             detailImage:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"mini"]]];
+    textImageRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    [section2.rows addObject:textImageRow];
     
     [self.tableView insertSection:section_header];
     [self.tableView insertSection:section0];
