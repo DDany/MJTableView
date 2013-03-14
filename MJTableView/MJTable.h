@@ -23,4 +23,6 @@
 #import "MJCustomTableRow.h"
 #import "MJTextImageTableRow.h"
 
+#import "SVPullToRefresh.h"
+
 #endif
