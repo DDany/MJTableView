@@ -49,6 +49,8 @@
 		42CF1CE416F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CF1CE116F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.m */; };
 		42CF1CE516F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CF1CE316F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m */; };
 		42CF1CE716F0B1DF008A2A84 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CF1CE616F0B1DF008A2A84 /* QuartzCore.framework */; };
+		9294636516F58C0D00E58972 /* customArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9294636316F58C0D00E58972 /* customArrow@2x.png */; };
+		9294636616F58C0D00E58972 /* customArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9294636416F58C0D00E58972 /* customArrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +129,8 @@
 		42CF1CE216F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		42CF1CE316F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		42CF1CE616F0B1DF008A2A84 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9294636316F58C0D00E58972 /* customArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "customArrow@2x.png"; sourceTree = "<group>"; };
+		9294636416F58C0D00E58972 /* customArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customArrow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +151,6 @@
 		42A8BB3316E597A60060D24E = {
 			isa = PBXGroup;
 			children = (
-				42CF1CE616F0B1DF008A2A84 /* QuartzCore.framework */,
 				42A8BBB516E59B380060D24E /* icon@2x.png */,
 				42A8BB4516E597A60060D24E /* MJTableViewExample */,
 				42A8BB3E16E597A60060D24E /* Frameworks */,
@@ -166,6 +169,7 @@
 		42A8BB3E16E597A60060D24E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42CF1CE616F0B1DF008A2A84 /* QuartzCore.framework */,
 				42A8BB3F16E597A60060D24E /* UIKit.framework */,
 				42A8BB4116E597A60060D24E /* Foundation.framework */,
 				42A8BB4316E597A60060D24E /* CoreGraphics.framework */,
@@ -286,6 +290,8 @@
 				42CF1CE116F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.m */,
 				42CF1CE216F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.h */,
 				42CF1CE316F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m */,
+				9294636416F58C0D00E58972 /* customArrow.png */,
+				9294636316F58C0D00E58972 /* customArrow@2x.png */,
 			);
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
@@ -350,6 +356,8 @@
 				42A8BBB416E59A220060D24E /* icon@2x.png in Resources */,
 				42A8BBB616E59B380060D24E /* icon@2x.png in Resources */,
 				42A8BBBE16E5AD7C0060D24E /* mini.png in Resources */,
+				9294636516F58C0D00E58972 /* customArrow@2x.png in Resources */,
+				9294636616F58C0D00E58972 /* customArrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
