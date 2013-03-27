@@ -248,6 +248,8 @@
 		42A8BB7F16E5981F0060D24E /* RowExtension */ = {
 			isa = PBXGroup;
 			children = (
+				42A8BB9016E5981F0060D24E /* MJTableViewCell.h */,
+				42A8BB9116E5981F0060D24E /* MJTableViewCell.m */,
 				42A8BB8016E5981F0060D24E /* MJCustomTableRow.h */,
 				42A8BB8116E5981F0060D24E /* MJCustomTableRow.m */,
 				42A8BB8216E5981F0060D24E /* MJDateTableRow.h */,
@@ -264,8 +266,6 @@
 				42A8BB8D16E5981F0060D24E /* MJSplitTableRow.m */,
 				42A8BB8E16E5981F0060D24E /* MJSplitTableViewCell.h */,
 				42A8BB8F16E5981F0060D24E /* MJSplitTableViewCell.m */,
-				42A8BB9016E5981F0060D24E /* MJTableViewCell.h */,
-				42A8BB9116E5981F0060D24E /* MJTableViewCell.m */,
 				42A8BB9216E5981F0060D24E /* MJTextFieldTableRow.h */,
 				42A8BB9316E5981F0060D24E /* MJTextFieldTableRow.m */,
 				42A8BB9416E5981F0060D24E /* MJTextFieldTableViewCell.h */,

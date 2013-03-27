@@ -10,6 +10,9 @@
 #import "MJTextViewTableViewCell.h"
 
 @implementation MJTextViewTableRow
+{
+    UITextView      *_tester;
+}
 
 #pragma mark - Public Methods
 
@@ -45,6 +48,7 @@
         self.dynamicAdjustRowHeightWhenShow = YES;
         self.maxRowHeight = 130;
         self.minRowHeight = 44;
+        self.textViewWidth = 120.0f;
         self.editable = YES;
     }
     return self;
@@ -60,34 +64,37 @@
 #pragma mark - Row height
 - (CGFloat)rowHeightForTableView:(UITableView *)tableView {
     if (!self.editable && self.dynamicAdjustRowHeightWhenShow) {
-        
-        CGSize textSize = CGSizeZero;
-        
-        // Dynamic adjust rowHeight.
-        if (self.text && self.text.length > 0) {
-            // text and detailText.
-            textSize = [self.text sizeWithFont:self.textFont
-                             constrainedToSize:CGSizeMake(tableView.bounds.size.width, 44)
-                                 lineBreakMode:NSLineBreakByWordWrapping];
-        }else {
-            // only detailText.
-            // do nothing.
-        }
-        
-        CGFloat offset = tableView.bounds.size.width - 320;
-        CGFloat contentViewWidth = self.accessoryType == UITableViewCellAccessoryNone ? (tableView.bounds.size.width-40) : (tableView.bounds.size.width-80);
-        if (tableView.style == UITableViewStylePlain) contentViewWidth += 16;
-        CGFloat contentViewWidhtForDetail = contentViewWidth - offset - textSize.width - 10;
-        
         CGSize detailSize = [self.stringValue sizeWithFont:self.detailTextFont
-                                         constrainedToSize:CGSizeMake(contentViewWidhtForDetail, self.maxRowHeight)
-                                             lineBreakMode:NSLineBreakByWordWrapping];
-        
+                                         constrainedToSize:CGSizeMake(self.textViewWidth - 8*2, 1000)
+                                             lineBreakMode:NSLineBreakByCharWrapping];
         [self setRowHeight:detailSize.height + ADJUST_TOP_INSET*2];
-        
     }
     
     return self.rowHeight;
+}
+
+- (UITextView *)testHeightTextView {
+    if (!_tester) {
+        _tester = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.textViewWidth, 100)];
+    }
+    _tester.contentInset = UIEdgeInsetsMake(-8, 0, -8, 0);
+    _tester.frame = CGRectMake(0, 0, self.textViewWidth, 100);
+    _tester.text = self.stringValue;
+    _tester.textColor = self.detailTextColor;
+    _tester.autocorrectionType = self.autocorrectionType;
+	_tester.autocapitalizationType = self.autocapitalizationType;
+	_tester.font = self.detailTextFont;
+	_tester.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    _tester.spellCheckingType = self.spellCheckingType;
+    _tester.keyboardType = self.keyboardType;
+    _tester.keyboardAppearance = self.keyboardAppearance;
+    _tester.returnKeyType = self.returnKeyType;
+    _tester.enablesReturnKeyAutomatically = self.enablesReturnKeyAutomatically;
+    _tester.secureTextEntry = self.secureTextEntry;
+    _tester.editable = self.editable;
+    _tester.userInteractionEnabled = _tester.editable;
+    
+    return _tester;
 }
 
 @end

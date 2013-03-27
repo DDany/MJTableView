@@ -147,18 +147,15 @@
         
         // multiple text show row
         MJTextViewTableRow *textViewRow = [MJTextViewTableRow rowWithText:@"MultiText Shown"
-                                                              stringValue:@"浦东南路3905号,博文园,6号502室(云台路地铁站3号口)"];
+                                                              stringValue:@"ADAWDAWDASDAWDAWDABCDDAWDAWDASDAWDAWDABCDDAWDAWDASDAWDAWD"];
         textViewRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         textViewRow.selectionStyle = UITableViewCellSelectionStyleGray;
         textViewRow.editable = NO;
-        textViewRow.dynamicAdjustRowHeightWhenShow = NO;
-        textViewRow.rowHeight = 60.0f;
+        textViewRow.dynamicAdjustRowHeightWhenShow = YES;
+        //textViewRow.rowHeight = 180;
         textViewRow.didSelectBlock = ^(NSIndexPath *indexPath){
             MJTextViewTableRow *row = (MJTextViewTableRow *)[self.tableView rowAtIndexPath:indexPath];
-            row.dynamicAdjustRowHeightWhenShow = !row.dynamicAdjustRowHeightWhenShow;
-            if (!row.dynamicAdjustRowHeightWhenShow) {
-                row.rowHeight = 60.0f;
-            }
+            row.stringValue = [row.stringValue.mutableCopy stringByAppendingString:@"AAWDADAW"];
             [self.tableView reloadRow:row animated:YES];
         };
         [section0.rows addObject:textViewRow];

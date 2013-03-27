@@ -10,6 +10,7 @@
 #import "MJTextViewTableRow.h"
 #import <QuartzCore/QuartzCore.h>
 
+
 @interface MJTextViewTableViewCell ()<UITextViewDelegate>
 @property (nonatomic, strong) UITextView *textView;
 
@@ -28,7 +29,7 @@
 	self.textView.autocapitalizationType = UITextAutocapitalizationTypeWords;
 	self.textView.font = [UIFont systemFontOfSize:16.0f];
 	self.textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    self.textView.contentInset = UIEdgeInsetsMake(-ADJUST_TOP_INSET*2, 0, -ADJUST_TOP_INSET*2, 0);
+    self.textView.contentInset = UIEdgeInsetsMake(-8, 0, -8, 0);
 	[self addSubview:self.textView];
 	
 	self.textView.delegate = self;
@@ -88,12 +89,12 @@
     self.textView.editable = row.editable;
     self.textView.userInteractionEnabled = self.textView.editable;
 
-    if (self.textView.editable && row.showTextViewBolderWhenEdit) {
+//    if (self.textView.editable && row.showTextViewBolderWhenEdit) {
         self.textView.layer.borderWidth = 1.0f;
         self.textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    }else {
-        self.textView.layer.borderWidth = 0.0f;;
-    }
+//    }else {
+//        self.textView.layer.borderWidth = 0.0f;;
+//    }
 }
 
 #pragma mark
@@ -145,7 +146,16 @@
         UITableView *tableView = [self tableView];
         
         CGFloat oldRowHeight = self.row.rowHeight;
-        self.row.rowHeight = [self suitableHeight];
+        CGFloat newRowHeight = [self.stringValue sizeWithFont:((MJTextViewTableRow *)self.row).detailTextFont
+                                            constrainedToSize:CGSizeMake(((MJTextViewTableRow *)self.row).textViewWidth - 8*2, 1000)
+                                                lineBreakMode:NSLineBreakByCharWrapping].height
+                                + ADJUST_TOP_INSET*2;
+        if (newRowHeight < ((MJTextViewTableRow *)self.row).minRowHeight) {
+            newRowHeight = ((MJTextViewTableRow *)self.row).minRowHeight;
+        }else if (newRowHeight > ((MJTextViewTableRow *)self.row).maxRowHeight) {
+            newRowHeight = ((MJTextViewTableRow *)self.row).maxRowHeight;
+        }
+        self.row.rowHeight = newRowHeight;
         
         if (oldRowHeight != self.row.rowHeight) {
             [tableView beginUpdates];
@@ -161,46 +171,15 @@
 }
 
 #pragma mark
-- (CGFloat)suitableHeight {
-    
-    CGFloat minRowHeight = ((MJTextViewTableRow *)self.row).minRowHeight;
-    CGFloat maxRowHeight = ((MJTextViewTableRow *)self.row).maxRowHeight;
-    
-    CGFloat height = [self.textView.text sizeWithFont:self.textView.font
-                                    constrainedToSize:CGSizeMake(self.textView.bounds.size.width, 1000)
-                                        lineBreakMode:NSLineBreakByWordWrapping].height;
-    height += ADJUST_TOP_INSET*2;
-    
-    if (height < minRowHeight) {
-        return minRowHeight;
-    }else if (height > maxRowHeight) {
-        return maxRowHeight;
-    }else {
-        return height;
-    }
-}
-
-#pragma mark
 - (void)layoutSubviews {
-    // frame分布:
-    // indicator : 20
-    // textlabel距离contentview左边10
-    // textlabel与textview距离10
-    // 剩余全是textview的部分
-    // 上下各空ADJUST_TOP_INSET距离.
-    
 	[super layoutSubviews];
-	CGRect editFrame = CGRectInset(self.contentView.frame, 10, ADJUST_TOP_INSET);
-	
-	if (self.textLabel.text && [self.textLabel.text length] != 0) {
-		CGSize textSize = [self.textLabel sizeThatFits:CGSizeZero];
-		editFrame.origin.x += textSize.width + 10;
-		editFrame.size.width -= textSize.width + 10;
-        editFrame.size.height = self.bounds.size.height - ADJUST_TOP_INSET*2;
-	} else {
-		CGSize textSize = [self.textView sizeThatFits:CGSizeZero];
-        editFrame.origin.y = (self.contentView.frame.size.height - textSize.height)/2;
-	}
+    
+    MJTextViewTableRow *row = (MJTextViewTableRow *)self.row;
+    
+	CGRect editFrame = self.contentView.frame;
+    editFrame.origin.x = editFrame.size.width - row.textViewWidth;
+    editFrame.origin.y = ADJUST_TOP_INSET;
+    editFrame.size = CGSizeMake(row.textViewWidth, editFrame.size.height - ADJUST_TOP_INSET*2);
     
 	self.textView.frame = editFrame;
 }
