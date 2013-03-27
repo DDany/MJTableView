@@ -23,7 +23,7 @@
 - (void)initialize {
 	// Initialization code
 	self.textView = [[UITextView alloc] initWithFrame:CGRectZero];
-    self.textView.backgroundColor = [UIColor clearColor];
+    self.textView.backgroundColor = [UIColor whiteColor];
 	self.textView.autocorrectionType = UITextAutocorrectionTypeDefault;
 	self.textView.autocapitalizationType = UITextAutocapitalizationTypeWords;
 	self.textView.font = [UIFont systemFontOfSize:16.0f];
@@ -67,8 +67,8 @@
 }
 
 #pragma mark
-- (void)prepareForRow:(MJTextViewTableRow *)row {
-    [super prepareForRow:row];
+- (void)configForRow:(MJTextViewTableRow *)row {
+    [super configForRow:row];
     self.selectionStyle = row.selectionStyle;
 	self.accessoryType = row.accessoryType;
     
@@ -182,7 +182,15 @@
 
 #pragma mark
 - (void)layoutSubviews {
+    // frame分布:
+    // indicator : 20
+    // textlabel距离contentview左边10
+    // textlabel与textview距离10
+    // 剩余全是textview的部分
+    // 上下各空ADJUST_TOP_INSET距离.
+    
 	[super layoutSubviews];
+    self.contentView.backgroundColor = [UIColor redColor];
 	CGRect editFrame = CGRectInset(self.contentView.frame, 10, ADJUST_TOP_INSET);
 	
 	if (self.textLabel.text && [self.textLabel.text length] != 0) {

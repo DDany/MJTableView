@@ -25,6 +25,7 @@
     return row;
 }
 
+#pragma mark - Init
 - (id)init {
     self = [super init];
     if (self) {
@@ -50,7 +51,7 @@
 }
 
 #pragma mark - Create cell
-- (UITableViewCell *)cell {
+- (UITableViewCell *)createCell {
     MJTextViewTableViewCell *cell = [[MJTextViewTableViewCell alloc] initWithStyle:self.cellStyle reuseIdentifier:self.reuseIdentifier];
         
     return cell;
@@ -66,7 +67,7 @@
         if (self.text && self.text.length > 0) {
             // text and detailText.
             textSize = [self.text sizeWithFont:self.textFont
-                             constrainedToSize:CGSizeMake(320, 44)
+                             constrainedToSize:CGSizeMake(tableView.bounds.size.width, 44)
                                  lineBreakMode:NSLineBreakByWordWrapping];
         }else {
             // only detailText.
@@ -74,7 +75,8 @@
         }
         
         CGFloat offset = tableView.bounds.size.width - 320;
-        CGFloat contentViewWidth = self.accessoryType == UITableViewCellAccessoryNone ? 280 : (240);
+        CGFloat contentViewWidth = self.accessoryType == UITableViewCellAccessoryNone ? (tableView.bounds.size.width-40) : (tableView.bounds.size.width-80);
+        if (tableView.style == UITableViewStylePlain) contentViewWidth += 16;
         CGFloat contentViewWidhtForDetail = contentViewWidth - offset - textSize.width - 10;
         
         CGSize detailSize = [self.stringValue sizeWithFont:self.detailTextFont

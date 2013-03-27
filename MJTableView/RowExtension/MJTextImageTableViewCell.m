@@ -42,8 +42,8 @@
 }
 
 #pragma mark - Custom cell
-- (void)prepareForRow:(MJTextImageTableRow *)row {
-    [super prepareForRow:row];
+- (void)configForRow:(MJTextImageTableRow *)row {
+    [super configForRow:row];
     
     self.label.text = row.stringValue;
     self.label.font = row.detailTextFont;

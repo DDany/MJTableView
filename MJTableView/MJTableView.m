@@ -270,10 +270,10 @@
     NSString *cellIdentifier = tableRow.reuseIdentifier;
     MJTableViewCell *cell = (MJTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = (MJTableViewCell *)[tableRow cell];
+        cell = (MJTableViewCell *)[tableRow createCell];
     }
     
-    [cell prepareForRow:tableRow];
+    [cell configForRow:tableRow];
     
     if (tableRow.cellForRowBlock) {
         tableRow.cellForRowBlock(cell, indexPath);

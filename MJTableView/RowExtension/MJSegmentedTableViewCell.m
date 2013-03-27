@@ -48,8 +48,8 @@
 }
 
 #pragma mark
-- (void)prepareForRow:(MJSegmentedTableRow *)row {
-    [super prepareForRow:row];
+- (void)configForRow:(MJSegmentedTableRow *)row {
+    [super configForRow:row];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 	self.accessoryType = UITableViewCellAccessoryNone;
     

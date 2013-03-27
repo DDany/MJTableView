@@ -13,7 +13,7 @@
 
 @property (nonatomic, weak) MJTableRow *row;
 
-- (void)prepareForRow:(MJTableRow *)row;
+- (void)configForRow:(MJTableRow *)row;
 
 - (UITableView *)tableView;
 @end

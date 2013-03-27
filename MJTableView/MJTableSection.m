@@ -16,6 +16,8 @@
     return [[MJTableSection alloc] init];
 }
 
+#pragma mark - Init
+
 - (id)init {
     self = [super init];
     if (self)
@@ -27,6 +29,7 @@
     return self;
 }
 
+#pragma mark -
 - (MJTableRow *)rowAtIndex:(NSInteger)index {
     return ([self rows])[index];
 }

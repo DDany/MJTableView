@@ -25,7 +25,7 @@
 }
 
 // override this method for set your custom cell with the row.
-- (void)prepareForRow:(MJTableRow *)row {
+- (void)configForRow:(MJTableRow *)row {
     self.row = row;
     
     self.textLabel.text = self.row.text;

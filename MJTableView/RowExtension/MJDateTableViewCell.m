@@ -55,8 +55,8 @@
 }
 
 #pragma mark 
-- (void)prepareForRow:(MJDateTableRow *)row {
-    [super prepareForRow:row];
+- (void)configForRow:(MJDateTableRow *)row {
+    [super configForRow:row];
     
     [self.dateFormatter setDateFormat:row.showDateFormatter];
     self.dateValue = row.dateValue;

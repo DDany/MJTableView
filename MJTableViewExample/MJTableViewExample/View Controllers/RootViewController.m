@@ -77,7 +77,7 @@
     MJTableRow *dynamicModificationRow = [MJTableRow row];
     dynamicModificationRow.text = @"Dynamic Modification";
     dynamicModificationRow.didSelectBlock = ^(NSIndexPath *indexPath){
-        DynamicModificationViewController *dmvc = [[DynamicModificationViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        DynamicModificationViewController *dmvc = [[DynamicModificationViewController alloc] initWithStyle:UITableViewStylePlain];
         [self.navigationController pushViewController:dmvc animated:YES];
     };
     [self.tableView insertRow:dynamicModificationRow];

@@ -100,7 +100,7 @@
         
         // multiline text row
         MJTableRow *multiLineRow = [MJTableRow rowWithText:@"Multiline Text"
-                                                detailText:@"他人的个人资料 TA的拼车里没有发布过事件的情况下 您的附近暂无人拼车改为：TA暂没有发布过拼车"];
+                                                detailText:@"他人的个人资料 TA的拼车里没有发布过事件的情况下 您的附近暂无人拼车改为：TA暂没有发布过拼车情况下 您的附近暂无人拼车改为：TA暂没有发布过拼车情况下 您的附近暂无人拼车改为：TA暂没有发布过拼车情况下 您的附近暂无人拼车改为：TA暂没有发布过拼车情况下 您的附近暂无人拼车改为：TA暂没有发布过拼车"];
         multiLineRow.isDetailTextMultiLine = YES;
         multiLineRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         

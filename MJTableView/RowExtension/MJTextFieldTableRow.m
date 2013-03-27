@@ -24,6 +24,7 @@
     return row;
 }
 
+#pragma mark - Init
 - (id)init {
     self = [super init];
     if (self) {
@@ -44,7 +45,7 @@
 }
 
 #pragma mark - Create cell
-- (UITableViewCell *)cell {
+- (UITableViewCell *)createCell {
     MJTextFieldTableViewCell *cell = [[MJTextFieldTableViewCell alloc] initWithStyle:self.cellStyle reuseIdentifier:self.reuseIdentifier];
         
     return cell;

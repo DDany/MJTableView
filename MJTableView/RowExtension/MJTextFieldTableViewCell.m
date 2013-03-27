@@ -74,8 +74,8 @@
 }
 
 #pragma mark - Custom cell
-- (void)prepareForRow:(MJTextFieldTableRow *)row {
-    [super prepareForRow:row];
+- (void)configForRow:(MJTextFieldTableRow *)row {
+    [super configForRow:row];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
 	self.accessoryType = UITableViewCellAccessoryNone;
     

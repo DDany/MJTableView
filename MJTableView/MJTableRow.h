@@ -40,7 +40,7 @@
 + (MJTableRow *)rowWithText:(NSString *)text detailText:(NSString *)detailText;
 
 #pragma mark - Create cell
-- (UITableViewCell *)cell;
+- (UITableViewCell *)createCell;
 
 #pragma mark - Row height
 - (CGFloat)rowHeightForTableView:(UITableView *)tableView;
