@@ -23,7 +23,7 @@
 - (void)initialize {
 	// Initialization code
 	self.textView = [[UITextView alloc] initWithFrame:CGRectZero];
-    self.textView.backgroundColor = [UIColor whiteColor];
+    self.textView.backgroundColor = [UIColor clearColor];
 	self.textView.autocorrectionType = UITextAutocorrectionTypeDefault;
 	self.textView.autocapitalizationType = UITextAutocapitalizationTypeWords;
 	self.textView.font = [UIFont systemFontOfSize:16.0f];
@@ -190,7 +190,6 @@
     // 上下各空ADJUST_TOP_INSET距离.
     
 	[super layoutSubviews];
-    self.contentView.backgroundColor = [UIColor redColor];
 	CGRect editFrame = CGRectInset(self.contentView.frame, 10, ADJUST_TOP_INSET);
 	
 	if (self.textLabel.text && [self.textLabel.text length] != 0) {
