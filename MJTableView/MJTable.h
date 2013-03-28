@@ -22,6 +22,7 @@
 #import "MJIntegerInputTableRow.h"
 #import "MJCustomTableRow.h"
 #import "MJTextImageTableRow.h"
+#import "MJSwitchTableRow.h"
 
 #import "SVPullToRefresh.h"
 

@@ -26,7 +26,7 @@ static CGFloat const SVPullToRefreshViewHeight = 60;
 
 @property (nonatomic, copy) void (^pullToRefreshActionHandler)(void);
 
-@property (nonatomic, strong) SVPullToRefreshArrow *arrow;
+@property (nonatomic, strong) UIView *arrow;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong, readwrite) UILabel *titleLabel;
 @property (nonatomic, strong, readwrite) UILabel *subtitleLabel;
@@ -140,14 +140,14 @@ static char UIScrollViewPullToRefreshView;
         
         // default styling values
         self.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-        self.textColor = [UIColor darkGrayColor];
+        self.textColor = [UIColor blackColor];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.state = SVPullToRefreshStateStopped;
         self.showsDateLabel = NO;
         
-        self.titles = [NSMutableArray arrayWithObjects:NSLocalizedString(@"Pull to refresh...",),
-                                                       NSLocalizedString(@"Release to refresh...",),
-                                                       NSLocalizedString(@"Loading...",),
+        self.titles = [NSMutableArray arrayWithObjects:NSLocalizedString(@"下拉以更新...",),
+                                                       NSLocalizedString(@"释放以更新...",),
+                                                       NSLocalizedString(@"正在更新中...",),
                                                        nil];
         
         self.subtitles = [NSMutableArray arrayWithObjects:@"", @"", @"", @"", nil];
@@ -219,6 +219,7 @@ static char UIScrollViewPullToRefreshView;
         }
     }
     
+#if 0
     CGFloat remainingWidth = self.superview.bounds.size.width-200;
     float position = 0.50;
     
@@ -235,6 +236,15 @@ static char UIScrollViewPullToRefreshView;
     CGRect arrowFrame = self.arrow.frame;
     arrowFrame.origin.x = ceilf(remainingWidth*position);
     self.arrow.frame = arrowFrame;
+#else
+    self.titleLabel.frame = CGRectMake(0, 15, 320, 20);
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.subtitleLabel.frame = CGRectMake(0, 35, 320, 20);
+    self.subtitleLabel.textAlignment = NSTextAlignmentCenter;
+
+    self.arrow.frame = CGRectMake(25, 15, 30, 30);
+#endif
 
 }
 
@@ -292,9 +302,12 @@ static char UIScrollViewPullToRefreshView;
 
 #pragma mark - Getters
 
-- (SVPullToRefreshArrow *)arrow {
+- (UIView *)arrow {
     if(!_arrow) {
-		_arrow = [[SVPullToRefreshArrow alloc]initWithFrame:CGRectMake(0, self.bounds.size.height-54, 22, 48)];
+        //_arrow = [[SVPullToRefreshArrow alloc]initWithFrame:CGRectMake(0, self.bounds.size.height-54, 22, 48)];
+        _arrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"customArrow"]];
+        _arrow.contentMode = UIViewContentModeScaleAspectFit;
+        _arrow.frame = CGRectMake(0, self.bounds.size.height-54, 22, 48);
         _arrow.backgroundColor = [UIColor clearColor];
 		[self addSubview:_arrow];
     }
@@ -314,7 +327,7 @@ static char UIScrollViewPullToRefreshView;
     if(!_titleLabel) {
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 210, 20)];
         _titleLabel.text = NSLocalizedString(@"Pull to refresh...",);
-        _titleLabel.font = [UIFont boldSystemFontOfSize:14];
+        _titleLabel.font = [UIFont fontWithName:@".Helvetica NeueUI" size:13];
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textColor = textColor;
         [self addSubview:_titleLabel];
@@ -325,7 +338,7 @@ static char UIScrollViewPullToRefreshView;
 - (UILabel *)subtitleLabel {
     if(!_subtitleLabel) {
         _subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 210, 20)];
-        _subtitleLabel.font = [UIFont systemFontOfSize:12];
+        _subtitleLabel.font = [UIFont fontWithName:@".Helvetica NeueUI" size:12];
         _subtitleLabel.backgroundColor = [UIColor clearColor];
         _subtitleLabel.textColor = textColor;
         [self addSubview:_subtitleLabel];
@@ -348,7 +361,11 @@ static char UIScrollViewPullToRefreshView;
 }
 
 - (UIColor *)arrowColor {
-	return self.arrow.arrowColor; // pass through
+    if ([self.arrow isKindOfClass:[SVPullToRefreshArrow class]]) {
+        return ((SVPullToRefreshArrow *)self.arrow).arrowColor; // pass through
+    }else {
+        return [UIColor clearColor];
+    }
 }
 
 - (UIColor *)textColor {
@@ -362,8 +379,10 @@ static char UIScrollViewPullToRefreshView;
 #pragma mark - Setters
 
 - (void)setArrowColor:(UIColor *)newArrowColor {
-	self.arrow.arrowColor = newArrowColor; // pass through
-	[self.arrow setNeedsDisplay];
+    if ([self.arrow isKindOfClass:[SVPullToRefreshArrow class]]) {
+        ((SVPullToRefreshArrow *)self.arrow).arrowColor = newArrowColor; // pass through
+        [self.arrow setNeedsDisplay];
+    }
 }
 
 - (void)setTitle:(NSString *)title forState:(SVPullToRefreshState)state {
@@ -412,6 +431,13 @@ static char UIScrollViewPullToRefreshView;
 
 - (void)setActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)viewStyle {
     self.activityIndicatorView.activityIndicatorViewStyle = viewStyle;
+}
+
+- (void)setUpdatedDate {
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [self setSubtitle:[NSString stringWithFormat:@"上次更新:%@", [formatter stringFromDate:[NSDate date]]] forState:SVPullToRefreshStateAll];
 }
 
 - (void)setLastUpdatedDate:(NSDate *)newLastUpdatedDate {

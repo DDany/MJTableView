@@ -22,35 +22,36 @@
 		42A8BB7216E597E70060D24E /* MixedCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB6A16E597E70060D24E /* MixedCellsViewController.m */; };
 		42A8BB7316E597E70060D24E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB6C16E597E70060D24E /* RootViewController.m */; };
 		42A8BB7416E597E70060D24E /* WaterfallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB6E16E597E70060D24E /* WaterfallViewController.m */; };
-		42A8BB9A16E5981F0060D24E /* MJTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB7816E5981E0060D24E /* MJTableRow.m */; };
-		42A8BB9B16E5981F0060D24E /* MJTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB7A16E5981E0060D24E /* MJTableSection.m */; };
-		42A8BB9C16E5981F0060D24E /* MJTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB7C16E5981E0060D24E /* MJTableView.m */; };
-		42A8BB9D16E5981F0060D24E /* MJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB7E16E5981F0060D24E /* MJTableViewController.m */; };
-		42A8BB9E16E5981F0060D24E /* MJCustomTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB8116E5981F0060D24E /* MJCustomTableRow.m */; };
-		42A8BB9F16E5981F0060D24E /* MJDateTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB8316E5981F0060D24E /* MJDateTableRow.m */; };
-		42A8BBA016E5981F0060D24E /* MJDateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB8516E5981F0060D24E /* MJDateTableViewCell.m */; };
-		42A8BBA116E5981F0060D24E /* MJIntegerInputTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB8716E5981F0060D24E /* MJIntegerInputTableRow.m */; };
-		42A8BBA216E5981F0060D24E /* MJSegmentedTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB8916E5981F0060D24E /* MJSegmentedTableRow.m */; };
-		42A8BBA316E5981F0060D24E /* MJSegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB8B16E5981F0060D24E /* MJSegmentedTableViewCell.m */; };
-		42A8BBA416E5981F0060D24E /* MJSplitTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB8D16E5981F0060D24E /* MJSplitTableRow.m */; };
-		42A8BBA516E5981F0060D24E /* MJSplitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB8F16E5981F0060D24E /* MJSplitTableViewCell.m */; };
-		42A8BBA616E5981F0060D24E /* MJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB9116E5981F0060D24E /* MJTableViewCell.m */; };
-		42A8BBA716E5981F0060D24E /* MJTextFieldTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB9316E5981F0060D24E /* MJTextFieldTableRow.m */; };
-		42A8BBA816E5981F0060D24E /* MJTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB9516E5981F0060D24E /* MJTextFieldTableViewCell.m */; };
-		42A8BBA916E5981F0060D24E /* MJTextViewTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB9716E5981F0060D24E /* MJTextViewTableRow.m */; };
-		42A8BBAA16E5981F0060D24E /* MJTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BB9916E5981F0060D24E /* MJTextViewTableViewCell.m */; };
 		42A8BBAD16E598840060D24E /* map_route_prev@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A8BBAB16E598840060D24E /* map_route_prev@2x.png */; };
 		42A8BBAE16E598840060D24E /* map_route_prev.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A8BBAC16E598840060D24E /* map_route_prev.png */; };
 		42A8BBB416E59A220060D24E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A8BBB316E59A220060D24E /* icon@2x.png */; };
 		42A8BBB616E59B380060D24E /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A8BBB516E59B380060D24E /* icon@2x.png */; };
-		42A8BBB916E5A8FB0060D24E /* MJTextImageTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BBB816E5A8FB0060D24E /* MJTextImageTableRow.m */; };
-		42A8BBBC16E5AA8C0060D24E /* MJTextImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8BBBB16E5AA8B0060D24E /* MJTextImageTableViewCell.m */; };
 		42A8BBBE16E5AD7C0060D24E /* mini.png in Resources */ = {isa = PBXBuildFile; fileRef = 42A8BBBD16E5AD7C0060D24E /* mini.png */; };
-		42CF1CE416F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CF1CE116F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.m */; };
-		42CF1CE516F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CF1CE316F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m */; };
 		42CF1CE716F0B1DF008A2A84 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CF1CE616F0B1DF008A2A84 /* QuartzCore.framework */; };
-		9294636516F58C0D00E58972 /* customArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9294636316F58C0D00E58972 /* customArrow@2x.png */; };
-		9294636616F58C0D00E58972 /* customArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9294636416F58C0D00E58972 /* customArrow.png */; };
+		42F364AF1703E36100C56227 /* MJTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364871703E36100C56227 /* MJTableRow.m */; };
+		42F364B01703E36100C56227 /* MJTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364891703E36100C56227 /* MJTableSection.m */; };
+		42F364B11703E36100C56227 /* MJTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3648B1703E36100C56227 /* MJTableView.m */; };
+		42F364B21703E36100C56227 /* MJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3648D1703E36100C56227 /* MJTableViewController.m */; };
+		42F364B31703E36100C56227 /* MJCustomTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364901703E36100C56227 /* MJCustomTableRow.m */; };
+		42F364B41703E36100C56227 /* MJDateTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364921703E36100C56227 /* MJDateTableRow.m */; };
+		42F364B51703E36100C56227 /* MJDateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364941703E36100C56227 /* MJDateTableViewCell.m */; };
+		42F364B61703E36100C56227 /* MJIntegerInputTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364961703E36100C56227 /* MJIntegerInputTableRow.m */; };
+		42F364B71703E36100C56227 /* MJSegmentedTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364981703E36100C56227 /* MJSegmentedTableRow.m */; };
+		42F364B81703E36100C56227 /* MJSegmentedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3649A1703E36100C56227 /* MJSegmentedTableViewCell.m */; };
+		42F364B91703E36100C56227 /* MJSplitTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3649C1703E36100C56227 /* MJSplitTableRow.m */; };
+		42F364BA1703E36100C56227 /* MJSplitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F3649E1703E36100C56227 /* MJSplitTableViewCell.m */; };
+		42F364BB1703E36100C56227 /* MJSwitchTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364A01703E36100C56227 /* MJSwitchTableRow.m */; };
+		42F364BC1703E36100C56227 /* MJTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364A21703E36100C56227 /* MJTableViewCell.m */; };
+		42F364BD1703E36100C56227 /* MJTextFieldTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364A41703E36100C56227 /* MJTextFieldTableRow.m */; };
+		42F364BE1703E36100C56227 /* MJTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364A61703E36100C56227 /* MJTextFieldTableViewCell.m */; };
+		42F364BF1703E36100C56227 /* MJTextImageTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364A81703E36100C56227 /* MJTextImageTableRow.m */; };
+		42F364C01703E36100C56227 /* MJTextImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364AA1703E36100C56227 /* MJTextImageTableViewCell.m */; };
+		42F364C11703E36100C56227 /* MJTextViewTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364AC1703E36100C56227 /* MJTextViewTableRow.m */; };
+		42F364C21703E36100C56227 /* MJTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364AE1703E36100C56227 /* MJTextViewTableViewCell.m */; };
+		42F364CB1703E3D900C56227 /* customArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F364C41703E3D900C56227 /* customArrow.png */; };
+		42F364CC1703E3D900C56227 /* customArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F364C51703E3D900C56227 /* customArrow@2x.png */; };
+		42F364CD1703E3D900C56227 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364C81703E3D900C56227 /* UIScrollView+SVInfiniteScrolling.m */; };
+		42F364CE1703E3D900C56227 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F364CA1703E3D900C56227 /* UIScrollView+SVPullToRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,58 +80,60 @@
 		42A8BB6C16E597E70060D24E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		42A8BB6D16E597E70060D24E /* WaterfallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallViewController.h; sourceTree = "<group>"; };
 		42A8BB6E16E597E70060D24E /* WaterfallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallViewController.m; sourceTree = "<group>"; };
-		42A8BB7616E5981E0060D24E /* MJTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTable.h; sourceTree = "<group>"; };
-		42A8BB7716E5981E0060D24E /* MJTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableRow.h; sourceTree = "<group>"; };
-		42A8BB7816E5981E0060D24E /* MJTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableRow.m; sourceTree = "<group>"; };
-		42A8BB7916E5981E0060D24E /* MJTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableSection.h; sourceTree = "<group>"; };
-		42A8BB7A16E5981E0060D24E /* MJTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableSection.m; sourceTree = "<group>"; };
-		42A8BB7B16E5981E0060D24E /* MJTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableView.h; sourceTree = "<group>"; };
-		42A8BB7C16E5981E0060D24E /* MJTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableView.m; sourceTree = "<group>"; };
-		42A8BB7D16E5981F0060D24E /* MJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewController.h; sourceTree = "<group>"; };
-		42A8BB7E16E5981F0060D24E /* MJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableViewController.m; sourceTree = "<group>"; };
-		42A8BB8016E5981F0060D24E /* MJCustomTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCustomTableRow.h; sourceTree = "<group>"; };
-		42A8BB8116E5981F0060D24E /* MJCustomTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCustomTableRow.m; sourceTree = "<group>"; };
-		42A8BB8216E5981F0060D24E /* MJDateTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDateTableRow.h; sourceTree = "<group>"; };
-		42A8BB8316E5981F0060D24E /* MJDateTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDateTableRow.m; sourceTree = "<group>"; };
-		42A8BB8416E5981F0060D24E /* MJDateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDateTableViewCell.h; sourceTree = "<group>"; };
-		42A8BB8516E5981F0060D24E /* MJDateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDateTableViewCell.m; sourceTree = "<group>"; };
-		42A8BB8616E5981F0060D24E /* MJIntegerInputTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJIntegerInputTableRow.h; sourceTree = "<group>"; };
-		42A8BB8716E5981F0060D24E /* MJIntegerInputTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJIntegerInputTableRow.m; sourceTree = "<group>"; };
-		42A8BB8816E5981F0060D24E /* MJSegmentedTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSegmentedTableRow.h; sourceTree = "<group>"; };
-		42A8BB8916E5981F0060D24E /* MJSegmentedTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSegmentedTableRow.m; sourceTree = "<group>"; };
-		42A8BB8A16E5981F0060D24E /* MJSegmentedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSegmentedTableViewCell.h; sourceTree = "<group>"; };
-		42A8BB8B16E5981F0060D24E /* MJSegmentedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSegmentedTableViewCell.m; sourceTree = "<group>"; };
-		42A8BB8C16E5981F0060D24E /* MJSplitTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSplitTableRow.h; sourceTree = "<group>"; };
-		42A8BB8D16E5981F0060D24E /* MJSplitTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSplitTableRow.m; sourceTree = "<group>"; };
-		42A8BB8E16E5981F0060D24E /* MJSplitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSplitTableViewCell.h; sourceTree = "<group>"; };
-		42A8BB8F16E5981F0060D24E /* MJSplitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSplitTableViewCell.m; sourceTree = "<group>"; };
-		42A8BB9016E5981F0060D24E /* MJTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewCell.h; sourceTree = "<group>"; };
-		42A8BB9116E5981F0060D24E /* MJTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableViewCell.m; sourceTree = "<group>"; };
-		42A8BB9216E5981F0060D24E /* MJTextFieldTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextFieldTableRow.h; sourceTree = "<group>"; };
-		42A8BB9316E5981F0060D24E /* MJTextFieldTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextFieldTableRow.m; sourceTree = "<group>"; };
-		42A8BB9416E5981F0060D24E /* MJTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		42A8BB9516E5981F0060D24E /* MJTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextFieldTableViewCell.m; sourceTree = "<group>"; };
-		42A8BB9616E5981F0060D24E /* MJTextViewTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextViewTableRow.h; sourceTree = "<group>"; };
-		42A8BB9716E5981F0060D24E /* MJTextViewTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextViewTableRow.m; sourceTree = "<group>"; };
-		42A8BB9816E5981F0060D24E /* MJTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextViewTableViewCell.h; sourceTree = "<group>"; };
-		42A8BB9916E5981F0060D24E /* MJTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextViewTableViewCell.m; sourceTree = "<group>"; };
 		42A8BBAB16E598840060D24E /* map_route_prev@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_route_prev@2x.png"; sourceTree = "<group>"; };
 		42A8BBAC16E598840060D24E /* map_route_prev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_route_prev.png; sourceTree = "<group>"; };
 		42A8BBB316E59A220060D24E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		42A8BBB516E59B380060D24E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
-		42A8BBB716E5A8FB0060D24E /* MJTextImageTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextImageTableRow.h; sourceTree = "<group>"; };
-		42A8BBB816E5A8FB0060D24E /* MJTextImageTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextImageTableRow.m; sourceTree = "<group>"; };
-		42A8BBBA16E5AA8B0060D24E /* MJTextImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextImageTableViewCell.h; sourceTree = "<group>"; };
-		42A8BBBB16E5AA8B0060D24E /* MJTextImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextImageTableViewCell.m; sourceTree = "<group>"; };
 		42A8BBBD16E5AD7C0060D24E /* mini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mini.png; sourceTree = "<group>"; };
-		42CF1CDF16F0B0AE008A2A84 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
-		42CF1CE016F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
-		42CF1CE116F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
-		42CF1CE216F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
-		42CF1CE316F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		42CF1CE616F0B1DF008A2A84 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9294636316F58C0D00E58972 /* customArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "customArrow@2x.png"; sourceTree = "<group>"; };
-		9294636416F58C0D00E58972 /* customArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customArrow.png; sourceTree = "<group>"; };
+		42F364851703E36100C56227 /* MJTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTable.h; sourceTree = "<group>"; };
+		42F364861703E36100C56227 /* MJTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableRow.h; sourceTree = "<group>"; };
+		42F364871703E36100C56227 /* MJTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableRow.m; sourceTree = "<group>"; };
+		42F364881703E36100C56227 /* MJTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableSection.h; sourceTree = "<group>"; };
+		42F364891703E36100C56227 /* MJTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableSection.m; sourceTree = "<group>"; };
+		42F3648A1703E36100C56227 /* MJTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableView.h; sourceTree = "<group>"; };
+		42F3648B1703E36100C56227 /* MJTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableView.m; sourceTree = "<group>"; };
+		42F3648C1703E36100C56227 /* MJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewController.h; sourceTree = "<group>"; };
+		42F3648D1703E36100C56227 /* MJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableViewController.m; sourceTree = "<group>"; };
+		42F3648F1703E36100C56227 /* MJCustomTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCustomTableRow.h; sourceTree = "<group>"; };
+		42F364901703E36100C56227 /* MJCustomTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCustomTableRow.m; sourceTree = "<group>"; };
+		42F364911703E36100C56227 /* MJDateTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDateTableRow.h; sourceTree = "<group>"; };
+		42F364921703E36100C56227 /* MJDateTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDateTableRow.m; sourceTree = "<group>"; };
+		42F364931703E36100C56227 /* MJDateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDateTableViewCell.h; sourceTree = "<group>"; };
+		42F364941703E36100C56227 /* MJDateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDateTableViewCell.m; sourceTree = "<group>"; };
+		42F364951703E36100C56227 /* MJIntegerInputTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJIntegerInputTableRow.h; sourceTree = "<group>"; };
+		42F364961703E36100C56227 /* MJIntegerInputTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJIntegerInputTableRow.m; sourceTree = "<group>"; };
+		42F364971703E36100C56227 /* MJSegmentedTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSegmentedTableRow.h; sourceTree = "<group>"; };
+		42F364981703E36100C56227 /* MJSegmentedTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSegmentedTableRow.m; sourceTree = "<group>"; };
+		42F364991703E36100C56227 /* MJSegmentedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSegmentedTableViewCell.h; sourceTree = "<group>"; };
+		42F3649A1703E36100C56227 /* MJSegmentedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSegmentedTableViewCell.m; sourceTree = "<group>"; };
+		42F3649B1703E36100C56227 /* MJSplitTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSplitTableRow.h; sourceTree = "<group>"; };
+		42F3649C1703E36100C56227 /* MJSplitTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSplitTableRow.m; sourceTree = "<group>"; };
+		42F3649D1703E36100C56227 /* MJSplitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSplitTableViewCell.h; sourceTree = "<group>"; };
+		42F3649E1703E36100C56227 /* MJSplitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSplitTableViewCell.m; sourceTree = "<group>"; };
+		42F3649F1703E36100C56227 /* MJSwitchTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJSwitchTableRow.h; sourceTree = "<group>"; };
+		42F364A01703E36100C56227 /* MJSwitchTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJSwitchTableRow.m; sourceTree = "<group>"; };
+		42F364A11703E36100C56227 /* MJTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewCell.h; sourceTree = "<group>"; };
+		42F364A21703E36100C56227 /* MJTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableViewCell.m; sourceTree = "<group>"; };
+		42F364A31703E36100C56227 /* MJTextFieldTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextFieldTableRow.h; sourceTree = "<group>"; };
+		42F364A41703E36100C56227 /* MJTextFieldTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextFieldTableRow.m; sourceTree = "<group>"; };
+		42F364A51703E36100C56227 /* MJTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		42F364A61703E36100C56227 /* MJTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		42F364A71703E36100C56227 /* MJTextImageTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextImageTableRow.h; sourceTree = "<group>"; };
+		42F364A81703E36100C56227 /* MJTextImageTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextImageTableRow.m; sourceTree = "<group>"; };
+		42F364A91703E36100C56227 /* MJTextImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextImageTableViewCell.h; sourceTree = "<group>"; };
+		42F364AA1703E36100C56227 /* MJTextImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextImageTableViewCell.m; sourceTree = "<group>"; };
+		42F364AB1703E36100C56227 /* MJTextViewTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextViewTableRow.h; sourceTree = "<group>"; };
+		42F364AC1703E36100C56227 /* MJTextViewTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextViewTableRow.m; sourceTree = "<group>"; };
+		42F364AD1703E36100C56227 /* MJTextViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTextViewTableViewCell.h; sourceTree = "<group>"; };
+		42F364AE1703E36100C56227 /* MJTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTextViewTableViewCell.m; sourceTree = "<group>"; };
+		42F364C41703E3D900C56227 /* customArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = customArrow.png; sourceTree = "<group>"; };
+		42F364C51703E3D900C56227 /* customArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "customArrow@2x.png"; sourceTree = "<group>"; };
+		42F364C61703E3D900C56227 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		42F364C71703E3D900C56227 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		42F364C81703E3D900C56227 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		42F364C91703E3D900C56227 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		42F364CA1703E3D900C56227 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +183,7 @@
 		42A8BB4516E597A60060D24E /* MJTableViewExample */ = {
 			isa = PBXGroup;
 			children = (
-				42A8BB7516E5981E0060D24E /* MJTableView */,
+				42F364841703E36100C56227 /* MJTableView */,
 				42A8BB4E16E597A60060D24E /* AppDelegate.h */,
 				42A8BB4F16E597A60060D24E /* AppDelegate.m */,
 				42A8BB6216E597E70060D24E /* View Controllers */,
@@ -226,72 +229,74 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		42A8BB7516E5981E0060D24E /* MJTableView */ = {
+		42F364841703E36100C56227 /* MJTableView */ = {
 			isa = PBXGroup;
 			children = (
-				42A8BB7616E5981E0060D24E /* MJTable.h */,
-				42A8BB7716E5981E0060D24E /* MJTableRow.h */,
-				42A8BB7816E5981E0060D24E /* MJTableRow.m */,
-				42A8BB7916E5981E0060D24E /* MJTableSection.h */,
-				42A8BB7A16E5981E0060D24E /* MJTableSection.m */,
-				42A8BB7B16E5981E0060D24E /* MJTableView.h */,
-				42A8BB7C16E5981E0060D24E /* MJTableView.m */,
-				42A8BB7D16E5981F0060D24E /* MJTableViewController.h */,
-				42A8BB7E16E5981F0060D24E /* MJTableViewController.m */,
-				42A8BB7F16E5981F0060D24E /* RowExtension */,
-				42CF1CDE16F0B0AE008A2A84 /* SVPullToRefresh */,
+				42F364851703E36100C56227 /* MJTable.h */,
+				42F364861703E36100C56227 /* MJTableRow.h */,
+				42F364871703E36100C56227 /* MJTableRow.m */,
+				42F364881703E36100C56227 /* MJTableSection.h */,
+				42F364891703E36100C56227 /* MJTableSection.m */,
+				42F3648A1703E36100C56227 /* MJTableView.h */,
+				42F3648B1703E36100C56227 /* MJTableView.m */,
+				42F3648C1703E36100C56227 /* MJTableViewController.h */,
+				42F3648D1703E36100C56227 /* MJTableViewController.m */,
+				42F3648E1703E36100C56227 /* RowExtension */,
+				42F364C31703E3D900C56227 /* SVPullToRefresh */,
 			);
 			name = MJTableView;
 			path = ../../MJTableView;
 			sourceTree = "<group>";
 		};
-		42A8BB7F16E5981F0060D24E /* RowExtension */ = {
+		42F3648E1703E36100C56227 /* RowExtension */ = {
 			isa = PBXGroup;
 			children = (
-				42A8BB9016E5981F0060D24E /* MJTableViewCell.h */,
-				42A8BB9116E5981F0060D24E /* MJTableViewCell.m */,
-				42A8BB8016E5981F0060D24E /* MJCustomTableRow.h */,
-				42A8BB8116E5981F0060D24E /* MJCustomTableRow.m */,
-				42A8BB8216E5981F0060D24E /* MJDateTableRow.h */,
-				42A8BB8316E5981F0060D24E /* MJDateTableRow.m */,
-				42A8BB8416E5981F0060D24E /* MJDateTableViewCell.h */,
-				42A8BB8516E5981F0060D24E /* MJDateTableViewCell.m */,
-				42A8BB8616E5981F0060D24E /* MJIntegerInputTableRow.h */,
-				42A8BB8716E5981F0060D24E /* MJIntegerInputTableRow.m */,
-				42A8BB8816E5981F0060D24E /* MJSegmentedTableRow.h */,
-				42A8BB8916E5981F0060D24E /* MJSegmentedTableRow.m */,
-				42A8BB8A16E5981F0060D24E /* MJSegmentedTableViewCell.h */,
-				42A8BB8B16E5981F0060D24E /* MJSegmentedTableViewCell.m */,
-				42A8BB8C16E5981F0060D24E /* MJSplitTableRow.h */,
-				42A8BB8D16E5981F0060D24E /* MJSplitTableRow.m */,
-				42A8BB8E16E5981F0060D24E /* MJSplitTableViewCell.h */,
-				42A8BB8F16E5981F0060D24E /* MJSplitTableViewCell.m */,
-				42A8BB9216E5981F0060D24E /* MJTextFieldTableRow.h */,
-				42A8BB9316E5981F0060D24E /* MJTextFieldTableRow.m */,
-				42A8BB9416E5981F0060D24E /* MJTextFieldTableViewCell.h */,
-				42A8BB9516E5981F0060D24E /* MJTextFieldTableViewCell.m */,
-				42A8BB9616E5981F0060D24E /* MJTextViewTableRow.h */,
-				42A8BB9716E5981F0060D24E /* MJTextViewTableRow.m */,
-				42A8BB9816E5981F0060D24E /* MJTextViewTableViewCell.h */,
-				42A8BB9916E5981F0060D24E /* MJTextViewTableViewCell.m */,
-				42A8BBB716E5A8FB0060D24E /* MJTextImageTableRow.h */,
-				42A8BBB816E5A8FB0060D24E /* MJTextImageTableRow.m */,
-				42A8BBBA16E5AA8B0060D24E /* MJTextImageTableViewCell.h */,
-				42A8BBBB16E5AA8B0060D24E /* MJTextImageTableViewCell.m */,
+				42F3648F1703E36100C56227 /* MJCustomTableRow.h */,
+				42F364901703E36100C56227 /* MJCustomTableRow.m */,
+				42F364911703E36100C56227 /* MJDateTableRow.h */,
+				42F364921703E36100C56227 /* MJDateTableRow.m */,
+				42F364931703E36100C56227 /* MJDateTableViewCell.h */,
+				42F364941703E36100C56227 /* MJDateTableViewCell.m */,
+				42F364951703E36100C56227 /* MJIntegerInputTableRow.h */,
+				42F364961703E36100C56227 /* MJIntegerInputTableRow.m */,
+				42F364971703E36100C56227 /* MJSegmentedTableRow.h */,
+				42F364981703E36100C56227 /* MJSegmentedTableRow.m */,
+				42F364991703E36100C56227 /* MJSegmentedTableViewCell.h */,
+				42F3649A1703E36100C56227 /* MJSegmentedTableViewCell.m */,
+				42F3649B1703E36100C56227 /* MJSplitTableRow.h */,
+				42F3649C1703E36100C56227 /* MJSplitTableRow.m */,
+				42F3649D1703E36100C56227 /* MJSplitTableViewCell.h */,
+				42F3649E1703E36100C56227 /* MJSplitTableViewCell.m */,
+				42F3649F1703E36100C56227 /* MJSwitchTableRow.h */,
+				42F364A01703E36100C56227 /* MJSwitchTableRow.m */,
+				42F364A11703E36100C56227 /* MJTableViewCell.h */,
+				42F364A21703E36100C56227 /* MJTableViewCell.m */,
+				42F364A31703E36100C56227 /* MJTextFieldTableRow.h */,
+				42F364A41703E36100C56227 /* MJTextFieldTableRow.m */,
+				42F364A51703E36100C56227 /* MJTextFieldTableViewCell.h */,
+				42F364A61703E36100C56227 /* MJTextFieldTableViewCell.m */,
+				42F364A71703E36100C56227 /* MJTextImageTableRow.h */,
+				42F364A81703E36100C56227 /* MJTextImageTableRow.m */,
+				42F364A91703E36100C56227 /* MJTextImageTableViewCell.h */,
+				42F364AA1703E36100C56227 /* MJTextImageTableViewCell.m */,
+				42F364AB1703E36100C56227 /* MJTextViewTableRow.h */,
+				42F364AC1703E36100C56227 /* MJTextViewTableRow.m */,
+				42F364AD1703E36100C56227 /* MJTextViewTableViewCell.h */,
+				42F364AE1703E36100C56227 /* MJTextViewTableViewCell.m */,
 			);
 			path = RowExtension;
 			sourceTree = "<group>";
 		};
-		42CF1CDE16F0B0AE008A2A84 /* SVPullToRefresh */ = {
+		42F364C31703E3D900C56227 /* SVPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
-				42CF1CDF16F0B0AE008A2A84 /* SVPullToRefresh.h */,
-				42CF1CE016F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.h */,
-				42CF1CE116F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.m */,
-				42CF1CE216F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.h */,
-				42CF1CE316F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m */,
-				9294636416F58C0D00E58972 /* customArrow.png */,
-				9294636316F58C0D00E58972 /* customArrow@2x.png */,
+				42F364C41703E3D900C56227 /* customArrow.png */,
+				42F364C51703E3D900C56227 /* customArrow@2x.png */,
+				42F364C61703E3D900C56227 /* SVPullToRefresh.h */,
+				42F364C71703E3D900C56227 /* UIScrollView+SVInfiniteScrolling.h */,
+				42F364C81703E3D900C56227 /* UIScrollView+SVInfiniteScrolling.m */,
+				42F364C91703E3D900C56227 /* UIScrollView+SVPullToRefresh.h */,
+				42F364CA1703E3D900C56227 /* UIScrollView+SVPullToRefresh.m */,
 			);
 			path = SVPullToRefresh;
 			sourceTree = "<group>";
@@ -356,8 +361,8 @@
 				42A8BBB416E59A220060D24E /* icon@2x.png in Resources */,
 				42A8BBB616E59B380060D24E /* icon@2x.png in Resources */,
 				42A8BBBE16E5AD7C0060D24E /* mini.png in Resources */,
-				9294636516F58C0D00E58972 /* customArrow@2x.png in Resources */,
-				9294636616F58C0D00E58972 /* customArrow.png in Resources */,
+				42F364CB1703E3D900C56227 /* customArrow.png in Resources */,
+				42F364CC1703E3D900C56227 /* customArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,27 +381,28 @@
 				42A8BB7216E597E70060D24E /* MixedCellsViewController.m in Sources */,
 				42A8BB7316E597E70060D24E /* RootViewController.m in Sources */,
 				42A8BB7416E597E70060D24E /* WaterfallViewController.m in Sources */,
-				42A8BB9A16E5981F0060D24E /* MJTableRow.m in Sources */,
-				42A8BB9B16E5981F0060D24E /* MJTableSection.m in Sources */,
-				42A8BB9C16E5981F0060D24E /* MJTableView.m in Sources */,
-				42A8BB9D16E5981F0060D24E /* MJTableViewController.m in Sources */,
-				42A8BB9E16E5981F0060D24E /* MJCustomTableRow.m in Sources */,
-				42A8BB9F16E5981F0060D24E /* MJDateTableRow.m in Sources */,
-				42A8BBA016E5981F0060D24E /* MJDateTableViewCell.m in Sources */,
-				42A8BBA116E5981F0060D24E /* MJIntegerInputTableRow.m in Sources */,
-				42A8BBA216E5981F0060D24E /* MJSegmentedTableRow.m in Sources */,
-				42A8BBA316E5981F0060D24E /* MJSegmentedTableViewCell.m in Sources */,
-				42A8BBA416E5981F0060D24E /* MJSplitTableRow.m in Sources */,
-				42A8BBA516E5981F0060D24E /* MJSplitTableViewCell.m in Sources */,
-				42A8BBA616E5981F0060D24E /* MJTableViewCell.m in Sources */,
-				42A8BBA716E5981F0060D24E /* MJTextFieldTableRow.m in Sources */,
-				42A8BBA816E5981F0060D24E /* MJTextFieldTableViewCell.m in Sources */,
-				42A8BBA916E5981F0060D24E /* MJTextViewTableRow.m in Sources */,
-				42A8BBAA16E5981F0060D24E /* MJTextViewTableViewCell.m in Sources */,
-				42A8BBB916E5A8FB0060D24E /* MJTextImageTableRow.m in Sources */,
-				42A8BBBC16E5AA8C0060D24E /* MJTextImageTableViewCell.m in Sources */,
-				42CF1CE416F0B0AE008A2A84 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
-				42CF1CE516F0B0AE008A2A84 /* UIScrollView+SVPullToRefresh.m in Sources */,
+				42F364AF1703E36100C56227 /* MJTableRow.m in Sources */,
+				42F364B01703E36100C56227 /* MJTableSection.m in Sources */,
+				42F364B11703E36100C56227 /* MJTableView.m in Sources */,
+				42F364B21703E36100C56227 /* MJTableViewController.m in Sources */,
+				42F364B31703E36100C56227 /* MJCustomTableRow.m in Sources */,
+				42F364B41703E36100C56227 /* MJDateTableRow.m in Sources */,
+				42F364B51703E36100C56227 /* MJDateTableViewCell.m in Sources */,
+				42F364B61703E36100C56227 /* MJIntegerInputTableRow.m in Sources */,
+				42F364B71703E36100C56227 /* MJSegmentedTableRow.m in Sources */,
+				42F364B81703E36100C56227 /* MJSegmentedTableViewCell.m in Sources */,
+				42F364B91703E36100C56227 /* MJSplitTableRow.m in Sources */,
+				42F364BA1703E36100C56227 /* MJSplitTableViewCell.m in Sources */,
+				42F364BB1703E36100C56227 /* MJSwitchTableRow.m in Sources */,
+				42F364BC1703E36100C56227 /* MJTableViewCell.m in Sources */,
+				42F364BD1703E36100C56227 /* MJTextFieldTableRow.m in Sources */,
+				42F364BE1703E36100C56227 /* MJTextFieldTableViewCell.m in Sources */,
+				42F364BF1703E36100C56227 /* MJTextImageTableRow.m in Sources */,
+				42F364C01703E36100C56227 /* MJTextImageTableViewCell.m in Sources */,
+				42F364C11703E36100C56227 /* MJTextViewTableRow.m in Sources */,
+				42F364C21703E36100C56227 /* MJTextViewTableViewCell.m in Sources */,
+				42F364CD1703E3D900C56227 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				42F364CE1703E3D900C56227 /* UIScrollView+SVPullToRefresh.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

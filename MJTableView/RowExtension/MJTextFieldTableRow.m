@@ -36,6 +36,7 @@
         self.keyboardType = UIKeyboardTypeDefault;
         self.keyboardAppearance = UIKeyboardAppearanceDefault;
         self.returnKeyType = UIReturnKeyDefault;
+        self.clearButtonMode = UITextFieldViewModeNever;
         self.enablesReturnKeyAutomatically = NO;
         self.secureTextEntry = NO;
         

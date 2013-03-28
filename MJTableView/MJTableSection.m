@@ -25,6 +25,9 @@
         self.headerHeight = UITableViewAutomaticDimension;
         self.footerHeight = UITableViewAutomaticDimension;
         self.rowAnimation = UITableViewRowAnimationAutomatic;
+        
+//        self.headerHeight = 10.0f;
+//        self.footerHeight = 1.0f;
     }
     return self;
 }

@@ -86,7 +86,7 @@
 	self.textField.autocapitalizationType = row.autocapitalizationType;
 	self.textField.textAlignment = NSTextAlignmentRight;
 	self.textField.font = row.detailTextFont;
-	self.textField.clearButtonMode = UITextFieldViewModeNever;
+	self.textField.clearButtonMode = row.clearButtonMode;
 	self.textField.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.textField.spellCheckingType = row.spellCheckingType;
     self.textField.keyboardType = row.keyboardType;
@@ -196,16 +196,18 @@
 - (void)layoutSubviews {
 	[super layoutSubviews];
 	CGRect editFrame = CGRectInset(self.contentView.frame, 10, 0);
-	
+    CGSize textFieldSize = [self.textField sizeThatFits:CGSizeZero];
+
 	if (self.textLabel.text && [self.textLabel.text length] != 0) {
 		CGSize textSize = [self.textLabel sizeThatFits:CGSizeZero];
 		editFrame.origin.x += textSize.width + 10;
-        editFrame.origin.y = self.textLabel.frame.origin.y;
+        editFrame.origin.y = (editFrame.size.height - textFieldSize.height)/2;
 		editFrame.size.width -= textSize.width + 10;
+        editFrame.size.height = textFieldSize.height;
 		self.textField.textAlignment = NSTextAlignmentRight;
 	} else {
-		CGSize textSize = [self.textField sizeThatFits:CGSizeZero];
-        editFrame.origin.y = (self.contentView.frame.size.height - textSize.height)/2;
+        editFrame.origin.y = (self.contentView.frame.size.height - textFieldSize.height)/2;
+        editFrame.size.height = textFieldSize.height;
 		self.textField.textAlignment = NSTextAlignmentRight;
 	}
 

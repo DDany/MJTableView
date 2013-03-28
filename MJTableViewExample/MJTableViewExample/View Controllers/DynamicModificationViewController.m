@@ -261,13 +261,14 @@
         };
         [section2.rows addObject:textImageRow];
         
-        [self.tableView insertSection:section_header];
-        [self.tableView insertSection:section0];
-        [self.tableView insertSection:section1];
-        [self.tableView insertSection:section2];
+        [self.tableView.sections addObject:section_header];
+        [self.tableView.sections addObject:section0];
+        [self.tableView.sections addObject:section1];
+        [self.tableView.sections addObject:section2];
         
     }
 
+    [self.tableView reloadData];
 }
 
 #pragma mark - Pull refresh & Load more

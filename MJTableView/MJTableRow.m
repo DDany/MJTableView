@@ -30,7 +30,7 @@
 - (id)init {
     self = [super init];
     if (self) {
-        self.selectionStyle = UITableViewCellSelectionStyleGray;
+        self.selectionStyle = UITableViewCellSelectionStyleBlue;
         self.accessoryType = UITableViewCellAccessoryNone;
         self.cellStyle = UITableViewCellStyleValue1;
         self.rowAnimation = UITableViewRowAnimationAutomatic;
@@ -38,7 +38,7 @@
         self.textFont = [UIFont boldSystemFontOfSize:16.0f];
         self.textColor = [UIColor blackColor];
         self.detailTextFont = [UIFont systemFontOfSize:14.0f];
-        self.detailTextColor = [UIColor brownColor];
+        self.detailTextColor = [UIColor grayColor];
         
         self.reuseIdentifier = NSStringFromClass([self class]);
         self.shouldDeselectAfterSelect = YES;
