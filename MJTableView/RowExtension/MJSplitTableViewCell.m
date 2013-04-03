@@ -53,25 +53,26 @@
 
 - (CGRect)frameForSplitLineAtIndex:(NSUInteger)index total:(NSUInteger)total {
     CGRect frame = CGRectMake(0, 0, 1, self.contentView.frame.size.height);
-    frame.origin.x = (self.contentView.frame.size.width/total)*index;
+    frame.origin.x = (self.contentView.frame.size.width / total) * index;
     
     return frame;
 }
 
 - (CGRect)frameForTitleAtIndex:(NSUInteger)index total:(NSUInteger)total alignment:(SplitTextAlignment)alignment {
     CGRect frame = CGRectZero;
+    MJSplitTableRow *row = (MJSplitTableRow *)self.row;
     
     if (alignment == SplitTextAlignmentVertical) {
         
-        frame.origin.x = (self.contentView.frame.size.width/total)*index;
-        frame.origin.y = self.contentView.frame.size.height*2/3;
-        frame.size.width = (self.contentView.frame.size.width/total);
-        frame.size.height = self.contentView.frame.size.height*1/3;
+        frame.origin.x = (self.contentView.frame.size.width / total) * index;
+        frame.origin.y = self.contentView.frame.size.height * row.valueLayoutAreaPercent;
+        frame.size.width = (self.contentView.frame.size.width / total);
+        frame.size.height = self.contentView.frame.size.height * (1 - row.valueLayoutAreaPercent);
         
     }else if (alignment == SplitTextAlignmentHorizontal) {
-        frame.origin.x = (self.contentView.frame.size.width/total)*index;
+        frame.origin.x = (self.contentView.frame.size.width / total) * index;
         frame.origin.y = 0;
-        frame.size.width = (self.contentView.frame.size.width/total)*2/3 - 4;
+        frame.size.width = (self.contentView.frame.size.width / total) * (1 - row.valueLayoutAreaPercent) - 4;
         frame.size.height = self.contentView.frame.size.height;
     }
     
@@ -81,19 +82,21 @@
 
 - (CGRect)frameForValueAtIndex:(NSUInteger)index total:(NSUInteger)total alignment:(SplitTextAlignment)alignment {
     CGRect frame = CGRectZero;
-    
+    MJSplitTableRow *row = (MJSplitTableRow *)self.row;
+
     if (alignment == SplitTextAlignmentVertical) {
         
-        frame.origin.x = (self.contentView.frame.size.width/total)*index;
+        frame.origin.x = (self.contentView.frame.size.width / total) * index;
         frame.origin.y = 0;
-        frame.size.width = (self.contentView.frame.size.width/total);
-        frame.size.height = self.contentView.frame.size.height*2/3;
+        frame.size.width = (self.contentView.frame.size.width / total);
+        frame.size.height = self.contentView.frame.size.height * row.valueLayoutAreaPercent;
         
     }else if (alignment == SplitTextAlignmentHorizontal) {
         
-        frame.origin.x = (self.contentView.frame.size.width/total)*index + (self.contentView.frame.size.width/total)*2/3;
+        frame.origin.x = (self.contentView.frame.size.width / total) * index
+                        + (self.contentView.frame.size.width / total) * (1 - row.valueLayoutAreaPercent);
         frame.origin.y = 0;
-        frame.size.width = (self.contentView.frame.size.width/total)*1/3;
+        frame.size.width = (self.contentView.frame.size.width / total) * row.valueLayoutAreaPercent;
         frame.size.height = self.contentView.frame.size.height;
         
     }
@@ -117,11 +120,11 @@
     UILabel *title = [[UILabel alloc] initWithFrame:frame];
     title.textColor = self.row.textColor;
     title.backgroundColor = [UIColor clearColor];
-    title.textAlignment = NSTextAlignmentCenter;
+    title.textAlignment = self.row.textAlignment;
     if (alignment == SplitTextAlignmentVertical) {
-        title.font = [UIFont boldSystemFontOfSize:12];
+        title.font = self.row.textFont ? self.row.textFont : [UIFont boldSystemFontOfSize:12];
     }else {
-        title.font = [UIFont boldSystemFontOfSize:14];
+        title.font = self.row.textFont ? self.row.textFont : [UIFont boldSystemFontOfSize:14];
     }
     return title;
 }
@@ -131,11 +134,11 @@
     UILabel *value = [[UILabel alloc] initWithFrame:frame];
     value.textColor = self.row.detailTextColor;
     value.backgroundColor = [UIColor clearColor];
-    value.textAlignment = NSTextAlignmentCenter;
+    value.textAlignment = self.row.detailTextAlignment;
     if (alignment == SplitTextAlignmentVertical) {
-        value.font = [UIFont boldSystemFontOfSize:18];
+        value.font = self.row.detailTextFont ? self.row.detailTextFont : [UIFont boldSystemFontOfSize:18];
     }else {
-        value.font = [UIFont boldSystemFontOfSize:14];
+        value.font = self.row.detailTextFont ? self.row.detailTextFont : [UIFont boldSystemFontOfSize:14];
     }
 
     return value;

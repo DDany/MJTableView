@@ -29,7 +29,12 @@
     if (self) {
         self.cellStyle = UITableViewCellStyleDefault;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         self.alignment = SplitTextAlignmentHorizontal;
+        self.valueLayoutAreaPercent = 1.0/2;
+        
+        self.textAlignment = NSTextAlignmentLeft;
+        self.detailTextAlignment = NSTextAlignmentCenter;
     }
     return self;
 }

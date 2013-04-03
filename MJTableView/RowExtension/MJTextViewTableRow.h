@@ -39,5 +39,7 @@
 //@property (nonatomic, strong) NSString *placeHolder;
 
 @property(nonatomic, copy) void (^onValueChanged)(NSString *newText);
+@property(nonatomic, copy) void (^didBeginEditingBlock)(UIView *editingView);
+@property(nonatomic, copy) void (^didEndEditingBlock)(UIView *editingView);
 
 @end

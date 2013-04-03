@@ -89,12 +89,12 @@
     self.textView.editable = row.editable;
     self.textView.userInteractionEnabled = self.textView.editable;
 
-//    if (self.textView.editable && row.showTextViewBolderWhenEdit) {
+    if (self.textView.editable && row.showTextViewBolderWhenEdit) {
         self.textView.layer.borderWidth = 1.0f;
         self.textView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//    }else {
-//        self.textView.layer.borderWidth = 0.0f;;
-//    }
+    }else {
+        self.textView.layer.borderWidth = 0.0f;;
+    }
 }
 
 #pragma mark
@@ -135,6 +135,23 @@
 }
 
 #pragma mark
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    if (((MJTextViewTableRow *)self.row).didBeginEditingBlock) {
+        ((MJTextViewTableRow *)self.row).didBeginEditingBlock(textView);
+    }
+    
+    return YES;
+}
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView {
+    if (((MJTextViewTableRow *)self.row).didEndEditingBlock) {
+        ((MJTextViewTableRow *)self.row).didEndEditingBlock(textView);
+    }
+    
+    return YES;
+}
+
 - (void)textViewDidEndEditing:(UITextView *)textView {
     UITableView *tableView = [self tableView];
 	[tableView deselectRowAtIndexPath:[tableView indexPathForCell:self] animated:YES];
@@ -181,6 +198,11 @@
     editFrame.origin.y = ADJUST_TOP_INSET;
     editFrame.size = CGSizeMake(row.textViewWidth, editFrame.size.height - ADJUST_TOP_INSET*2);
     
+    CGRect textFrame = self.textLabel.frame;
+    textFrame.origin.y = editFrame.origin.y;
+    self.textLabel.frame = textFrame;
+    
+    editFrame.origin.y += 2;
 	self.textView.frame = editFrame;
 }
 

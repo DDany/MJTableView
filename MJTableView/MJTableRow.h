@@ -13,10 +13,12 @@
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) UIFont *textFont;
 @property (nonatomic, strong) UIColor *textColor;
+@property (nonatomic, assign) NSTextAlignment textAlignment;
 @property (nonatomic, strong) NSString *detailText;
 @property (nonatomic, strong) UIFont *detailTextFont;
-@property (nonatomic, assign) BOOL isDetailTextMultiLine;       // default is NO;
 @property (nonatomic, strong) UIColor *detailTextColor;
+@property (nonatomic, assign) NSTextAlignment detailTextAlignment;
+@property (nonatomic, assign) BOOL isDetailTextMultiLine;               // default is NO;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIView *accessoryView;
 

@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, SplitTextAlignment) {
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) NSArray *values;
 
-@property (nonatomic, assign) SplitTextAlignment alignment;
+@property (nonatomic, assign) CGFloat valueLayoutAreaPercent;   // value text frame percent, default is 1/2.
+
+@property (nonatomic, assign) SplitTextAlignment alignment;     // default is SplitTextAlignmentHorizontal.
 
 @end

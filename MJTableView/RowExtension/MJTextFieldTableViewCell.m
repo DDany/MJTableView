@@ -153,9 +153,19 @@
 	return YES;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (((MJTextFieldTableRow *)self.row).didBeginEditingBlock) {
+        ((MJTextFieldTableRow *)self.row).didBeginEditingBlock(textField);
+    }
+}
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
 	UITableView *tableView = [self tableView];
 	[tableView deselectRowAtIndexPath:[tableView indexPathForCell:self] animated:YES];
+    
+    if (((MJTextFieldTableRow *)self.row).didEndEditingBlock) {
+        ((MJTextFieldTableRow *)self.row).didEndEditingBlock(textField);
+    }
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {

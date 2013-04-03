@@ -67,7 +67,14 @@
         CGSize detailSize = [self.stringValue sizeWithFont:self.detailTextFont
                                          constrainedToSize:CGSizeMake(self.textViewWidth - 8*2, 1000)
                                              lineBreakMode:NSLineBreakByCharWrapping];
-        [self setRowHeight:detailSize.height + ADJUST_TOP_INSET*2];
+        
+        CGFloat newHeight = detailSize.height + ADJUST_TOP_INSET*2;
+        if (newHeight < self.minRowHeight) {
+            newHeight = self.minRowHeight;
+        }else if (newHeight > self.maxRowHeight) {
+            newHeight = self.maxRowHeight;
+        }
+        [self setRowHeight:newHeight];
     }
     
     return self.rowHeight;

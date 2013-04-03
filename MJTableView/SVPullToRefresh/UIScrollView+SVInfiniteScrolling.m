@@ -55,12 +55,16 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 - (void)addInfiniteScrollingWithActionHandler:(void (^)(void))actionHandler {
     
     if(!self.infiniteScrollingView) {
-        SVInfiniteScrollingView *view = [[SVInfiniteScrollingView alloc] initWithFrame:CGRectMake(0, self.contentSize.height, self.bounds.size.width, SVInfiniteScrollingViewHeight)];
+        SVInfiniteScrollingView *view = [[SVInfiniteScrollingView alloc] initWithFrame:CGRectMake(0, ([self isTableView] ? 0 : self.contentSize.height), self.bounds.size.width, SVInfiniteScrollingViewHeight)];
         view.infiniteScrollingHandler = actionHandler;
         view.scrollView = self;
-        [self addSubview:view];
+        if ([self isTableView]) {
+            ((UITableView *)self).tableFooterView = view;
+        }else {
+            [self addSubview:view];
+            view.originalBottomInset = self.contentInset.bottom;
+        }
         
-        view.originalBottomInset = self.contentInset.bottom;
         self.infiniteScrollingView = view;
         self.showsInfiniteScrolling = YES;
     }
@@ -89,7 +93,9 @@ UIEdgeInsets scrollViewOriginalContentInsets;
     if(!showsInfiniteScrolling) {
       if (self.infiniteScrollingView.isObserving) {
         [self removeObserver:self.infiniteScrollingView forKeyPath:@"contentOffset"];
-        [self removeObserver:self.infiniteScrollingView forKeyPath:@"contentSize"];
+          if (![self isTableView]) {
+              [self removeObserver:self.infiniteScrollingView forKeyPath:@"contentSize"];
+          }
         [self.infiniteScrollingView resetScrollViewContentInset];
         self.infiniteScrollingView.isObserving = NO;
       }
@@ -97,18 +103,27 @@ UIEdgeInsets scrollViewOriginalContentInsets;
     else {
       if (!self.infiniteScrollingView.isObserving) {
         [self addObserver:self.infiniteScrollingView forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil];
-        [self addObserver:self.infiniteScrollingView forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+          if (![self isTableView]) {
+              [self addObserver:self.infiniteScrollingView forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+          }
         [self.infiniteScrollingView setScrollViewContentInsetForInfiniteScrolling];
         self.infiniteScrollingView.isObserving = YES;
           
         [self.infiniteScrollingView setNeedsLayout];
-        self.infiniteScrollingView.frame = CGRectMake(0, self.contentSize.height, self.infiniteScrollingView.bounds.size.width, SVInfiniteScrollingViewHeight);
+          if (![self isTableView]) {
+              self.infiniteScrollingView.frame = CGRectMake(0, self.contentSize.height, self.infiniteScrollingView.bounds.size.width, SVInfiniteScrollingViewHeight);
+          }
       }
     }
 }
 
 - (BOOL)showsInfiniteScrolling {
     return !self.infiniteScrollingView.hidden;
+}
+
+- (BOOL)isTableView {
+    return NO;
+    //return [self isKindOfClass:[UITableView class]];
 }
 
 @end
@@ -149,7 +164,9 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         if (scrollView.showsInfiniteScrolling) {
           if (self.isObserving) {
             [scrollView removeObserver:self forKeyPath:@"contentOffset"];
-            [scrollView removeObserver:self forKeyPath:@"contentSize"];
+              if (![scrollView isTableView]) {
+                  [scrollView removeObserver:self forKeyPath:@"contentSize"];
+              }
             self.isObserving = NO;
           }
         }
@@ -171,7 +188,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 
 - (void)setScrollViewContentInsetForInfiniteScrolling {
     UIEdgeInsets currentInsets = self.scrollView.contentInset;
-    currentInsets.bottom = self.originalBottomInset + SVInfiniteScrollingViewHeight;
+    currentInsets.bottom = self.originalBottomInset + ([self.scrollView isTableView] ? 0 : SVInfiniteScrollingViewHeight);
     [self setScrollViewContentInset:currentInsets];
 }
 
@@ -193,7 +210,9 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         //[self scrollViewDidScroll:[[change valueForKey:NSKeyValueChangeNewKey] CGPointValue]];
     } else if([keyPath isEqualToString:@"contentSize"]) {
         [self layoutSubviews];
-        self.frame = CGRectMake(0, self.scrollView.contentSize.height, self.bounds.size.width, SVInfiniteScrollingViewHeight);
+        if (![self.scrollView isTableView]) {
+            self.frame = CGRectMake(0, self.scrollView.contentSize.height, self.bounds.size.width, SVInfiniteScrollingViewHeight);
+        }
     }
 }
 
@@ -307,10 +326,11 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         [customView setFrame:CGRectMake(origin.x, origin.y, viewBounds.size.width, viewBounds.size.height)];
     }
     else {
-        CGRect viewBounds = [self.activityIndicatorView bounds];
-        CGPoint origin = CGPointMake(roundf((self.bounds.size.width-viewBounds.size.width)/2), roundf((self.bounds.size.height-viewBounds.size.height)/2));
-        [self.activityIndicatorView setFrame:CGRectMake(origin.x, origin.y, viewBounds.size.width, viewBounds.size.height)];
-        
+        if (![self.scrollView isTableView]) {
+            CGRect viewBounds = [self.activityIndicatorView bounds];
+            CGPoint origin = CGPointMake(roundf((self.bounds.size.width-viewBounds.size.width)/2), roundf((self.bounds.size.height-viewBounds.size.height)/2));
+            [self.activityIndicatorView setFrame:CGRectMake(origin.x, origin.y, viewBounds.size.width, viewBounds.size.height)];
+        }
         switch (newState) {
             case SVInfiniteScrollingStateStopped:
                 [self.activityIndicatorView stopAnimating];
@@ -327,9 +347,11 @@ UIEdgeInsets scrollViewOriginalContentInsets;
         }
         
         [self.label sizeToFit];
-        CGRect labelBounds = self.label.bounds;
-        CGPoint labelOrigin = CGPointMake(roundf((self.bounds.size.width-labelBounds.size.width)/2), roundf((self.bounds.size.height-labelBounds.size.height)/2));
-        [self.label setFrame:CGRectMake(labelOrigin.x, labelOrigin.y, labelBounds.size.width, labelBounds.size.height)];
+        if (![self.scrollView isTableView]) {
+            CGRect labelBounds = self.label.bounds;
+            CGPoint labelOrigin = CGPointMake(roundf((self.bounds.size.width-labelBounds.size.width)/2), roundf((self.bounds.size.height-labelBounds.size.height)/2));
+            [self.label setFrame:CGRectMake(labelOrigin.x, labelOrigin.y, labelBounds.size.width, labelBounds.size.height)];
+        }
     }
     
     if(previousState == SVInfiniteScrollingStateTriggered && newState == SVInfiniteScrollingStateLoading && self.infiniteScrollingHandler && self.enabled)
